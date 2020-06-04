@@ -1,1 +1,438 @@
 
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <script type="text/javascript" src="http://www.intra-mart.jpc747.systranlinks.net/sl_language_selector.js"></script>
+    <script src="https://staging-d.ea-shutto-translation.net/trans.js?id=243"></script>
+    <title>4.3. エレメントのサンプル実装 &mdash; IM-BloomMaker プログラミングガイド &nbsp; 第3版 2020-04-01 &nbsp; intra-mart Accel Platform</title>
+    
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '第3版 2020-04-01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <link rel="top" title="intra-mart Accel Platform" href="../../index.html" />
+    <link rel="up" title="4. エレメント・アクションアイテムの作成" href="index.html" />
+    <link rel="next" title="4.4. アクションアイテムを実装する" href="action_item_implementation.html" />
+    <link rel="prev" title="4.2. エレメントを実装する" href="element_implementation.html" />
+
+    <!--[if IE 8]>
+      <link rel="stylesheet" href="../../_static/ie8.css" type="text/css" />
+    <![endif]-->
+    <!--[if lte IE 9.0]>
+      <script type="text/javascript">
+        window.disableQuickSearch = true;
+      </script>
+      <link rel="stylesheet" href="../../_static/ie9.css" type="text/css" />
+    <![endif]-->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-52658773-1', {
+            'cookieDomain':'none'
+        });
+        ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+<div class="container">
+  <div class="header">
+    <div class="heading">
+      <p class="left">
+        <a href="http://www.intra-mart.jp/document/library/index.html" title="intra-mart Accel Series Document Library">
+          <span class="header-logo"></span>
+        </a>
+        <span class="name-split" style="display:none;">&nbsp;|&nbsp;</span>
+      </p>
+      <p class="right">
+        <a href="../../index.html" class="document-name">
+          <span class="product-name">intra-mart Accel Platform</span>
+          IM-BloomMaker プログラミングガイド
+        </a>
+        <span class="heading-supplementation">第3版 2020-04-01</span>
+      </p>
+    </div>
+
+    <div class="quicksearch">
+<div id="searchbox">
+  <div id="oktavia_search_form" data-index="searchindex.oktavia.js">
+    <form class="oktavia_form">
+      <label>クイック検索</label>
+      <input class="oktavia_search" result="10" type="search" name="search" value="" placeholder="クイック検索" />
+      <input type="submit" value="検索" />
+    </form>
+  </div>
+</div>
+<!--
+<div id="searchbox" class="hoge" style="display: none">
+  <label>クイック検索</label>
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="クイック検索" />
+    <input type="submit" value="検索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+-->
+    </div>
+  </div>
+
+  <div class="pdf-header">
+    <div class="left"><span class="header-logo"></span></div>
+    <div class="right">
+      <span class="product-name">intra-mart Accel Platform</span>
+      <span class="shorttitle">IM-BloomMaker プログラミングガイド</span>
+      <span class="heading-supplementation">第3版 2020-04-01</span>
+    </div>
+  </div>
+
+  <div class="nav topnav">
+    
+  <p class="cf">
+    <a class="uplink" href="../../index.html">目次</a>
+    <a class="prev-link" href="element_implementation.html"><span class="mark">&#8810;&#160;&#160;</span><span class="index-title">4.2. エレメントを実装する</span></a>
+    <a class="next-link" href="action_item_implementation.html"><span class="index-title">4.4. アクションアイテムを実装する</span><span class="mark">&#160;&#160;&#8811;</span></a>
+  </p>
+
+  </div>
+
+  <div class="wrapper">
+      <div id="sidebar-left" class="sidebar active">
+        
+    <div class="sphinxsidebar">
+      <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">目次</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../revision_history/index.html">1. 改訂情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">2. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preprocessor/index.html">3. 前処理プログラム</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. エレメント・アクションアイテムの作成</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">4.1. エレメント・アクションアイテムを作成する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_implementation.html">4.2. エレメントを実装する</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">4.3. エレメントのサンプル実装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.3.1. 本体のクラスを実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.3.2. 制約を実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.3.3. 表示形式を実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#link-implement-unique-property-sample">4.3.4. 固有プロパティを実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#createelement">4.3.5. createElement メソッドを実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updateelement">4.3.6. updateElement メソッドを実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.3.7. 実装したクラスの登録</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">4.3.8. プロパティファイルの実装</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="action_item_implementation.html">4.4. アクションアイテムを実装する</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+      </div>
+      <div class="content">
+        
+<blockquote>
+<div></div></blockquote>
+<div class="section" id="link-element-sample">
+<span id="id1"></span><h1>4.3. エレメントのサンプル実装<a class="headerlink" href="#link-element-sample" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>この章では、添付のサンプル（sample.zip の implemented ディレクトリ）の郵便番号入力エレメント（MyZipCodeField.ts）の実装について、説明します。</p>
+<p>郵便番号入力エレメントは、以下のようなエレメントです。</p>
+<ul class="simple">
+<li>全体の親要素(<cite>&lt;div&gt;</cite>)と、その子要素である2つのテキストボックス(<cite>&lt;input&gt;</cite>)と1つのラベル(<cite>&lt;label&gt;</cite>)から構成されています。</li>
+<li>1つめのテキストボックスに3桁、2つめのテキストボックスに4桁まで値を入力できます。</li>
+<li>全体でvalueという固有プロパティを持っています。valueの値は、2つのテキストボックスに入力された値を連結したものです。既存の多くのコンポーネントと同様に、双方向バインディングで実装します。（双方向バインディングについては、 <a class="reference internal" href="element_implementation.html#link-add-unique-property"><em>固有プロパティを追加する</em></a> を参照してください。）</li>
+</ul>
+<p><img alt="sample_element_1" src="../../_images/element_sample_1.png" style="width: 49%;" /> <img alt="sample_element_2" src="../../_images/element_sample_2.png" style="width: 49%;" /></p>
+<div class="section" id="id2">
+<h2>4.3.1. 本体のクラスを実装する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まずは、 <tt class="docutils literal"><span class="pre">{VSCODE_HOME}/src/public/elements</span></tt> に、MyZipCodeField.ts を作成します。</p>
+
+<div class="section" id="id3">
+<h2>4.3.2. 制約を実装する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>制約クラス Constraint で IUIComponentConstraint を実装します。</p>
+</div>
+<div class="section" id="id4">
+<h2>4.3.3. 表示形式を実装する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+
+</div>
+
+<div class="section" id="link-implement-unique-property-sample">
+<span id="id5"></span><h2>4.3.4. 固有プロパティを実装する<a class="headerlink" href="#link-implement-unique-property-sample" title="このヘッドラインへのパーマリンク">¶</a></h2>
+
+</div>
+<div class="section" id="createelement">
+<h2>4.3.5. createElement メソッドを実装する<a class="headerlink" href="#createelement" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>createElement メソッドを実装します。</p>
+
+</div>
+<div class="section" id="updateelement">
+<h2>4.3.6. updateElement メソッドを実装する<a class="headerlink" href="#updateelement" title="このヘッドラインへのパーマリンク">¶</a></h2>
+
+</div>
+<div class="section" id="id6">
+<h2>4.3.7. 実装したクラスの登録<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">{VSCODE_HOME}/src/index.ts</span></tt> で以下のように、カテゴリとエレメントを登録します。</p>
+
+</div>
+<div class="section" id="id7">
+<h2>4.3.8. プロパティファイルの実装<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">{VSCODE_HOME}/src/public/messages</span></tt> に component_ja.properties を作成し、以下のようにメッセージプロパティを記述します。</p>
+
+
+      </div>
+      <div id="sidebar-right" class="sidebar">
+        
+    <div class="sphinxsidebar">
+      <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">目次</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../revision_history/index.html">1. 改訂情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">2. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preprocessor/index.html">3. 前処理プログラム</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. エレメント・アクションアイテムの作成</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">4.1. エレメント・アクションアイテムを作成する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="element_implementation.html">4.2. エレメントを実装する</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">4.3. エレメントのサンプル実装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.3.1. 本体のクラスを実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.3.2. 制約を実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.3.3. 表示形式を実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#link-implement-unique-property-sample">4.3.4. 固有プロパティを実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#createelement">4.3.5. createElement メソッドを実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updateelement">4.3.6. updateElement メソッドを実装する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.3.7. 実装したクラスの登録</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">4.3.8. プロパティファイルの実装</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="action_item_implementation.html">4.4. アクションアイテムを実装する</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+      </div>
+  </div>
+
+  <div class="nav bottomnav">
+    
+  <p class="cf">
+    <a class="uplink" href="../../index.html">目次</a>
+    <a class="prev-link" href="element_implementation.html"><span class="mark">&#8810;&#160;&#160;</span><span class="index-title">4.2. エレメントを実装する</span></a>
+    <a class="next-link" href="action_item_implementation.html"><span class="index-title">4.4. アクションアイテムを実装する</span><span class="mark">&#160;&#160;&#8811;</span></a>
+  </p>
+
+  </div>
+
+  <div class="footer">
+    <hr class="bar" />
+    <div class="inner">
+      <p class="copyright">
+           Copyright &copy; 2019 NTT DATA INTRAMART CORPORATION 
+      </p>
+      <a id="disp-sidebar-switch-btn" class="sidebar-button" title="Switch sidebar position"><span class="mark"></span><span class="text">&#x21C4; Sidebar</span></a>
+      <a class="page-top" href="#" title="Go to page top"><span class="mark">&uarr;</span><span class="text">Top</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function($) {
+    $(document).ready(function() {
+      // shutto翻訳画像切り替え処理
+      if (__stt) {
+        // Polyfill for ie
+        if (!String.prototype.endsWith) {
+          String.prototype.endsWith = function(search, this_len) {
+            if (this_len === undefined || this_len > this.length) {
+              this_len = this.length;
+            }
+            return this.substring(this_len - search.length, this_len) === search;
+          };
+        }
+        // shuttoのセルフ翻訳画像が優先されないように初期表示時の画像のsrc属性をキャッシュする
+        var imgSrcCache = []
+        var getImgSrcCache = function(img) {
+          for (let i = 0; imgSrcCache.length > i; i++) {
+            // alt属性はshuttoのセルフ翻訳が入っていても不変
+            if (imgSrcCache[i] === $(img).attr("alt")) return imgSrcCache[i]
+          }
+          return null
+        }
+        // 多言語画像が存在する場合のみ置換を行う
+        var replaceImg = function(url, $target) {
+          $.ajax({
+            url: url,
+            type: 'HEAD',
+            success: function() {
+              $target.attr("src", url);
+              // 画像をクリックした際に表示される画像も置換する
+              if (!!$target.parent().attr("href")) $target.parent().attr("href", url);
+            }
+          });
+        }
+        var getFileName = function(str) {
+          return str.slice(0, str.lastIndexOf("."));
+        }
+        var getExt = function(str) {
+          return str.slice(str.lastIndexOf("."));
+        }
+        var trimFileName = function(fileName) {
+          if (fileName.endsWith('_en')) return fileName.slice(0, -3);
+          if (fileName.endsWith('_zh_CN')) return fileName.slice(0, -6);
+          return fileName
+        }
+        var needSwitchImg = function($target) {
+            let src = $target.attr("src")
+            // src属性がない場合は対象外
+            if (!src) return false
+            // src属性とalt属性が一致しない場合（アイコン画像など）は対象外
+            if (trimFileName(getFileName(src)) !== getFileName($target.attr("alt"))) return false
+            return true
+        }
+        var switchImgOnInit = function(lang) {
+          if (lang === 'zh-CN') lang = 'zh_CN'
+          $("img").each(function() {
+            let oldSrc = $(this).attr("src");
+            if (!needSwitchImg($(this))) return;
+
+            let cache = getImgSrcCache(this)
+            if (cache === null) {
+              imgSrcCache.push($(this).attr("alt"))
+            } else {
+              oldSrc = cache
+            }
+
+            if (lang === 'ja') return;
+
+            let fileName = getFileName(oldSrc)
+            let ext = getExt(oldSrc)
+            let newSrc = `${fileName}_${lang}${ext}`
+            replaceImg(newSrc, $(this))
+          });
+        }
+        var switchImgOnChange = function(lang) {
+          $("img").each(function() {
+            let oldSrc = $(this).attr("src");
+            if (!needSwitchImg($(this))) return;
+
+            let cache = getImgSrcCache(this)
+            if (cache === null) {
+              imgSrcCache.push($(this).attr("alt"))
+            } else {
+              oldSrc = cache
+            }
+
+            let fileName = getFileName(oldSrc);
+            let ext = getExt(oldSrc);
+            switch (lang) {
+              case 'ja': {
+                fileName = trimFileName(fileName)
+                let newSrc = `${fileName}${ext}`
+                $(this).attr("src", newSrc);
+                if (!!$(this).parent().attr("href")) $(this).parent().attr("href", newSrc);
+                break;
+              }
+              case 'en': {
+                fileName = trimFileName(fileName)
+                let newSrc = `${fileName}_${lang}${ext}`
+                replaceImg(newSrc, $(this))
+                break;
+              }
+              case 'zh-CN': {
+                fileName = trimFileName(fileName)
+                let newSrc = `${fileName}_zh_CN${ext}`
+                replaceImg(newSrc, $(this))
+                break;
+              }
+              default:
+                return;
+            }
+          });
+        }
+        __stt.get('lang', function(lang) {
+          switchImgOnInit(lang)
+          // shutto側のセルフ翻訳画像が存在する場合を考慮して、描画後に再度置換処理を行う
+          if (!!window.setTimeout) window.setTimeout(switchImgOnInit, 1000, lang);
+        });
+        __stt.on('selectLang', function(event) {
+          switchImgOnChange(event.lang)
+          // shutto側のセルフ翻訳画像が存在する場合を考慮して、描画後に再度置換処理を行う
+          if (!!window.setTimeout) window.setTimeout(switchImgOnChange, 1000, event.lang);
+        });
+      }
+
+      var setPosition = function(position) {
+        if (position === 'left') {
+          $.cookie('im-document-library', 'left', {expires: 30, path: '/'});
+        } else {
+          $.cookie('im-document-library', 'right', {expires: 30, path: '/'});
+        }
+      }
+
+      if ($.cookie('im-document-library') == 'right') {
+        $("#sidebar-right").addClass('active');
+        $("#sidebar-left").removeClass('active');
+      }
+
+      $("#disp-sidebar-switch-btn").click(function() {
+        $("#sidebar-right").toggleClass('active');
+        $("#sidebar-left").toggleClass('active');
+        if ($('#sidebar-left').hasClass('active')) {
+          setPosition('left');
+        } else {
+          setPosition('right');
+        }
+      });
+      // ページ内遷移のときに、スクロールの位置がヘッダー分ずれる不具合の対応
+      $('a').click(function(e){
+        var _href = $(this).attr('href');
+        if (_href != null) {
+          if (_href.length > 2) {
+            if (_href.indexOf('#') == 0) {
+              setTimeout(function() {
+                var $id = $(_href.replace( /(:|\.|\[|\]|\(|\))|,/g, "\\$1" ));
+                $(document).scrollTop($id.position().top);
+              },1);
+            }
+          }
+        }
+      })
+      // 異なるページからアンカーを指定された場合、スクロールの位置がヘッダー分ずれる不具合の対応
+      if (window.location.hash.length > 0) {
+        setTimeout(function(){
+          var $id = $(decodeURIComponent(window.location.hash).replace( /(:|\.|\[|\]|\(|\))|,/g, "\\$1" ));
+          if ($id.length > 0) {
+            $(document).scrollTop($id.position().top);
+          }
+        },50);
+      }
+    });
+  })(jQuery);
+</script>
+<script>
+    $('a.reference.external').click(function(){
+        window.open($(this).attr('href'));
+        return false;
+     });
+</script>
+
+  </body>
+</html>
