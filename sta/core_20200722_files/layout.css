@@ -1,0 +1,36 @@
+.l-footer--only-bottom {
+  padding-top: 0;
+  background: none;
+}
+
+.l-footer.l-footer--recruit {
+  padding: 0;
+}
+
+.l-footer.l-footer--recruit .l-inner,
+.l-footer.l-footer--recruit .l-footer__inner {
+  display: block;
+  max-width: none;
+  padding: 0;
+}
+
+.l-footer.l-footer--recruit .l-footer__bottom {
+  margin-top: 0;
+}
+
+.contextual-region.l-gnav {
+  position: static;
+}
+
+.l-inner.l-inner--overflow {
+  overflow: visible;
+}
+
+.l-megamenu {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+/*# sourceMappingURL=layout.css.map */
