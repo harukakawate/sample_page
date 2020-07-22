@@ -1,0 +1,313 @@
+.p-article-header {
+  margin-bottom: 30px;
+}
+
+.p-article-date {
+  margin-right: 20px;
+}
+
+.p-article-title {
+  margin-top: 24px;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.p-article-mv {
+  margin-bottom: 54px;
+  text-align: center;
+}
+
+.p-article-mv img {
+  height: auto;
+}
+
+.p-article-body {
+  font-size: 1.4rem;
+  line-height: 1.714;
+}
+
+.p-article-body h1:not(.c-section-title),
+.p-article-body h2:not(.c-section-title),
+.p-article-body h3:not(.c-section-title),
+.p-article-body h4:not(.c-section-title),
+.p-article-body h5:not(.c-section-title),
+.p-article-body h6:not(.c-section-title) {
+  margin-bottom: 1em;
+  font-weight: 500;
+}
+
+.p-article-body h2:not(.c-section-title),
+.p-article-body .p-article-heading-2 {
+  font-size: 2.4rem;
+}
+
+.p-article-body h3:not(.c-section-title),
+.p-article-body .p-article-heading-3 {
+  font-size: 2rem;
+}
+
+.p-article-body h4:not(.c-section-title),
+.p-article-body .p-article-heading-4 {
+  font-size: 1.8rem;
+}
+
+.p-article-body p:not(:last-child) {
+  margin-bottom: 1.75em;
+}
+
+.p-article-body a:not(.c-btn) {
+  color: #012057;
+  text-decoration: underline;
+}
+
+.p-article-body a:not(.c-btn)[target='_blank']::after {
+  display: inline-block;
+  width: 19px;
+  height: 14px;
+  margin-left: 10px;
+  background: url(/themes/original/common/img/icon_blank.png) no-repeat left top;
+  background-size: cover;
+  vertical-align: middle;
+  content: '';
+}
+
+.p-article-body a:not(.c-btn)[href$='.pdf']::after {
+  display: inline-block;
+  width: 19px;
+  height: 24px;
+  margin-left: 10px;
+  background: url(/themes/original/common/img/icon_pdf.png) no-repeat left top;
+  background-size: cover;
+  vertical-align: middle;
+  content: '';
+}
+
+.p-article-body .p-article-link {
+  color: #333333;
+  text-decoration: none;
+}
+
+.p-article-body .p-article-link::before {
+  display: inline-block;
+  width: 15px;
+  height: 7px;
+  margin-right: 5px;
+  margin-bottom: .1em;
+  background: url(/themes/original/common/img/icon_arrow.png) no-repeat left top;
+  background-size: cover;
+  vertical-align: middle;
+  content: '';
+}
+
+.p-article-body hr,
+.p-article-body .p-article-separator {
+  margin: 1.75em 0;
+  border: none;
+  border-top: 1px solid #d5d5d5;
+}
+
+.p-article-body hr--dotted,
+.p-article-body .p-article-separator--dotted {
+  border-top-style: dotted;
+}
+
+.p-article-body strong,
+.p-article-body b,
+.p-article-body em {
+  font-weight: 500;
+}
+
+.p-article-body .c-disclist,
+.p-article-body .c-orderlist,
+.p-article-body .c-normallist,
+.p-article-body .c-linklist,
+.p-article-body .p-btn-unit {
+  margin-bottom: 1.75em;
+}
+
+.p-article-body .c-linklist a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.p-article-body .c-btn-contact {
+  font-size: 1.4rem;
+}
+
+.p-article-body .l-section-cv {
+  position: relative;
+  margin-top: 60px;
+}
+
+.p-article-body .l-section-cv::before {
+  display: block;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  background: #f7f3e6;
+  content: '';
+}
+
+.p-article-body .l-section-cv .c-section-lead {
+  margin-bottom: 36px;
+}
+
+.p-article-body .l-section-cv .p-btn-unit {
+  margin-bottom: 0;
+}
+
+.p-article-lead {
+  margin-bottom: 22px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.611;
+}
+
+.p-article-box {
+  margin-bottom: 1.75em;
+  padding: 40px;
+}
+
+.p-article-box--colored {
+  background: #f2f2f2;
+}
+
+.p-article-box--border {
+  border: 1px solid #d5d5d5;
+}
+
+.p-article-box__title {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.p-article-row {
+  margin-top: 2em;
+  margin-bottom: 2.5em;
+}
+
+.p-article-figure {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.p-article-table {
+  margin-bottom: 1.75em;
+}
+
+.p-article-iframe {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.p-article-iframe::before {
+  display: block;
+  width: 100%;
+  padding-top: 56.25%;
+  content: '';
+}
+
+.p-article-iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.p-article-btn__item {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.l-page-header {
+  background: url(/themes/original/news/img/bg_title_news.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+.p-page-header {
+  color: #fff;
+}
+
+.l-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  .p-article-header {
+    margin-bottom: 21px;
+  }
+  .p-article-date {
+    margin-right: 10px;
+  }
+  .p-article-title {
+    margin-top: 14px;
+    font-size: 2rem;
+  }
+  .p-article-mv {
+    margin-bottom: 22px;
+  }
+  .p-article-body h1:not(.c-section-title),
+  .p-article-body h2:not(.c-section-title),
+  .p-article-body h3:not(.c-section-title),
+  .p-article-body h4:not(.c-section-title),
+  .p-article-body h5:not(.c-section-title),
+  .p-article-body h6:not(.c-section-title) {
+    margin-bottom: .8em;
+  }
+  .p-article-body h2:not(.c-section-title),
+  .p-article-body .p-article-heading-2 {
+    font-size: 1.8rem;
+  }
+  .p-article-body h3:not(.c-section-title),
+  .p-article-body .p-article-heading-3 {
+    font-size: 1.6rem;
+  }
+  .p-article-body .c-btn-large {
+    height: auto;
+    min-height: 55px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .p-article-lead {
+    font-size: 1.8rem;
+  }
+  .p-article-box {
+    padding: 20px 15px;
+  }
+  .p-article-row .l-col {
+    margin-bottom: 1.75em;
+  }
+  .p-article-table {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    border-right: 1px solid #dddddd;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1)) 0 0/20px 100%, linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1)) right/20px 100%;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    white-space: nowrap;
+  }
+  .p-article-table .c-table {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white 15px) 0 0/50px 100%, linear-gradient(to right, rgba(255, 255, 255, 0), white 15px) right/50px 100%;
+    background-attachment: local;
+    background-repeat: no-repeat;
+  }
+  .p-article-table .c-table th {
+    background: rgba(0, 0, 0, 0.13);
+  }
+  .p-article-btn {
+    flex-wrap: wrap;
+  }
+  .p-article-btn__item {
+    margin: 10px 10px 0 10px;
+  }
+}
