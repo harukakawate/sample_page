@@ -1,0 +1,239 @@
+/*-- ログイン画面 --*/
+/*-- divにclass="login" --*/
+.login { margin: 150px auto 120px; }
+.login #block-original-local-tasks {
+  width: 96%;
+  max-width: 1095px;
+  display: block;
+  margin: 0 auto;
+}
+.login #block-original-local-tasks ul {
+  width: 100%;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;display:flex;-
+  webkit-box-orient:horizontal;
+  -webkit-box-direction:normal;
+  -webkit-flex-flow:row wrap;
+  -ms-flex-flow:row wrap;
+  flex-flow:row wrap;
+}
+.login #block-original-local-tasks ul li {
+  width: auto;
+  display: block;
+  border: solid 1px #ddd;
+  border-bottom: none;
+}
+.login #block-original-local-tasks ul li a{
+  width: auto;
+  display: block;
+  background-color: #ddd;
+  padding: 10px 15px;
+}
+.login #block-original-local-tasks ul li a.is-active {
+  position: relative;
+  background-color: #fff;
+}
+.login #block-original-local-tasks ul li a.is-active::before,
+.login #block-original-local-tasks ul li a.is-active::after {
+  content: "";
+  width: calc(100% + 1px);
+  height: 2px;
+  display: block;
+  position: absolute;
+  left: 0;
+  margin: auto;
+}
+.login #block-original-local-tasks ul li a.is-active::before {
+  background-color: #3655b3;
+  top: -1px;
+}
+.login #block-original-local-tasks ul li a.is-active::after {
+  background-color: #fff;
+  bottom: -1px;
+}
+.login #block-original-content {
+  width: 96%;
+  max-width: 1095px;
+  display: block;
+  border: solid 1px #ddd;
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+.login form div.js-form-item {
+  margin-bottom: 20px;
+}
+.login form div.js-form-item label {
+  display: block;
+  font-weight: 600;
+}
+.login form div.js-form-item input {
+  width: 60%;
+  min-width: 280px;
+  height: 33px;
+  font-size: 14px;
+  border: solid 1px #ddd;
+  padding: 5px 10px;
+}
+.login form div.description {
+  color: #d93636;
+  font-weight: 600;
+}
+.login form div.description::before {
+  content: "-";
+  display: inline-block;
+  color: #d93636;
+}
+.login form div.js-form-item-pass {
+  margin-bottom: 40px;
+}
+.login .user-pass p {
+  margin-bottom: 40px;
+}
+.login input#edit-submit {
+  width: 160px;
+  height: 60px;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  background-color: #bf8e1d;
+  cursor: pointer;
+}
+/*-- ログイン画面 エラー --*/
+div[role=alert] {
+  width: 96%;
+  max-width: 1095px;
+  display: block;
+  color: #d93636;
+  font-weight: 600;
+  margin: 0 auto 20px;
+}
+div[role=alert] a { display: block; color: #333333; font-weight: 400; text-decoration: underline; margin-top: 8px; }
+div[role=alert] a:hover { text-decoration: none; }
+
+/*-- 管理画面 --*/
+/*-- header --*/
+.toolbar-tray-open .l-header{
+  height: 0;
+}
+.toolbar-horizontal.toolbar-fixed.toolbar-tray-open .p-header {
+  top: 199px;
+}
+
+.page-scroll .toolbar-horizontal.toolbar-fixed.toolbar-tray-open .p-header{
+  top: 79px;
+}
+.toolbar-horizontal.toolbar-fixed.toolbar-tray-open:not(.page-top) .dialog-off-canvas-main-canvas{
+  padding-top: 0px;
+}
+
+.toolbar-horizontal .toolbar-tray {
+  border:none;
+  box-shadow:none;
+}
+.toolbar-horizontal.toolbar-tray-open {
+  border-bottom:1px solid #aaa;
+  box-shadow:-2px 1px 3px 1px rgba(0,0,0,0.3333);
+}
+@media only screen and (min-width:36em) {
+  .toolbar .toolbar-bar .toolbar-tab > .toolbar-icon {
+    min-height:3.9rem;
+  }
+}
+
+/*-- 編集メニューのulにclass="edit-menu" --*/
+ul.edit-menu,
+form.node-preview-form-select {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;display:flex;-
+  webkit-box-orient:horizontal;
+  -webkit-box-direction:normal;
+  -webkit-flex-flow:row wrap;
+  -ms-flex-flow:row wrap;
+  flex-flow:row wrap;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  margin: auto;
+  z-index: 1000;
+}
+ul.edit-menu li {
+  margin: 0 5px;
+}
+ul.edit-menu li a{
+  display: block;
+  background-color: #ddd;
+  padding: 12px 22px;
+  position: relative;
+}
+form.node-preview-form-select a{
+  display: flex;
+  align-items: center;
+}
+ul.edit-menu li a:hover,
+form.node-preview-form-select a:hover{
+  background-color: #fff;
+  transition: all .6s ease;
+}
+ul.edit-menu li a::before,
+ul.edit-menu li a::after,
+form.node-preview-form-select a::before,
+form.node-preview-form-select a::after{
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  background-color: #3655b3;
+  position: absolute;
+  margin: auto;
+  transition: all .6s ease;
+}
+ul.edit-menu li a::before,
+form.node-preview-form-select a::before {
+  top: 0;
+  left: 0;
+}
+ul.edit-menu li a::after,
+form.node-preview-form-select a::after {
+  bottom: 0;
+  right: 0;
+}
+ul.edit-menu li a:hover::before,
+ul.edit-menu li a:hover::after,
+form.node-preview-form-select a:hover::before,
+form.node-preview-form-select a:hover::after {
+  width: 100%;
+  transition: all .6s ease;
+}
+
+form.node-preview-form-select a {
+  background-color: #ddd;
+  padding: 12px 22px;
+  margin-right:20px;
+  position: relative;
+}
+form.node-preview-form-select div {
+  padding: 12px 22px;
+  position: relative;
+}
+form.node-preview-form-select div::before {
+  content: "";
+  width: 8px;
+  height: 5px;
+  display: block;
+  border-top: solid 8px #000;
+  border-right: solid 4px transparent;
+  border-left: solid 4px transparent;
+  position: absolute;
+  right: 37px;
+  margin: auto;
+}
+form.node-preview-form-select div select {
+  padding: 12px 10px;
+  border: solid 1px #000;
+  margin: 0 10px;
+}
+form.node-preview-form-select div {
+  display: none;
+}
