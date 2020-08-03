@@ -1,0 +1,28 @@
+/* jquery-ui datepicker configurations */
+.ui-datepicker {
+    width: 220px;
+}
+
+.ui-datepicker th {
+    font-weight: bold;
+    text-align: center;
+    font-size: 9pt;
+    padding: 1pt;
+}
+
+.ui-datepicker td {
+    font-size: 9pt;
+    border-collapse: collapse; 
+    margin:0 0 3pt;
+}
+
+.ui-datepicker-week-end .ui-state-default {
+    color: red;
+    font-weight: bold;
+}
+
+.ui-datepicker-holiday {
+    color: red !important;
+    font-weight: bold !important;
+}
+

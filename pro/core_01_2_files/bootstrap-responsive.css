@@ -1,0 +1,277 @@
+/*!
+ * Bootstrap Responsive v2.3.2
+ *
+ * Copyright 2013 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world by @mdo and @fat.
+ */
+
+.clearfix {
+ *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.clearfix:after {
+	clear: both;
+}
+.hide-text {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
+.input-block-level {
+	display: block;
+	width: 100%;
+	min-height: 30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ @-ms-viewport {
+ width: device-width;
+}
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+.visible-phone {
+	display: none !important;
+}
+.visible-tablet {
+	display: none !important;
+}
+.hidden-desktop {
+	display: none !important;
+}
+.visible-desktop {
+	display: inherit !important;
+}
+.visible-print {
+	display: none !important;
+}
+ @media print {
+.visible-print {
+	display: inherit !important;
+}
+.hidden-print {
+	display: none !important;
+}
+}
+@media only screen and (max-width: 767px) {
+.nav-collapse {
+	-webkit-transform: translate3d(0, 0, 0);
+}
+.page-header h1 small {
+	display: block;
+	line-height: 20px;
+}
+input[type="checkbox"],  input[type="radio"] {
+	border: 1px solid #ccc;
+}
+.form-horizontal .control-label {
+	float: none;
+	width: auto;
+	padding-top: 0;
+	text-align: left;
+}
+.form-horizontal .controls {
+	margin-left: 0;
+}
+.form-horizontal .control-list {
+	padding-top: 0;
+}
+.form-horizontal .form-actions {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.media .pull-left,  .media .pull-right {
+	display: block;
+	float: none;
+	margin-bottom: 10px;
+}
+.media-object {
+	margin-right: 0;
+	margin-left: 0;
+}
+.modal {
+	left: 3%;
+    right: 3%;
+    width: 94%;
+	margin-left: auto;
+}
+.modal-header button {
+	width:auto;
+}
+.modal-header .close {
+	padding: 10px;
+	margin: -10px;
+}
+.modal.fade.in {
+	top:3%;
+}
+.modal-header {
+	padding: 1% 2%;
+}
+.modal-body {
+	height:85%;
+}
+#Modal_window {
+	height:93%;
+}
+.carousel-caption {
+	position: static;
+}
+/*mp add start*/
+.ss_contents, #ss_header, #ss_footer, .ss_form_btn {
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.modal_win #ss_header {
+	width: 100%;
+}
+.ss_form table tr,.ss_form_matrix table tr,.ss_form_matrix table tr.matrix_day,.ss_login table tr,.ss_seminar_preview table tr,.ss_public table tr {
+	display: block;
+}
+
+.ss_form table th,.ss_form_matrix table th,.ss_form_matrix table th.matrix_day,.ss_login table th,.ss_seminar_preview table th,.ss_public table th {
+	display: block;
+	width: auto;
+}
+.ss_form table td,.ss_form_matrix table td,.ss_login table td,.ss_seminar_preview table td,.ss_mypage table td,.ss_public table td {
+	display: block;
+	border-top:none;
+}
+.ss_form_matrix table td {
+	border-bottom: 1px solid #dddddd;
+}
+
+.ss_form_matrix table .day_line {
+	display:inline;
+}
+.ss_form_matrix table .sp_day_line {
+	display:inline;
+}
+.ss_form_matrix table .pc_day_line {
+	display:none;
+}
+.ss_form_matrix table .track {
+	display:none;
+}
+.ss_mypage table th {
+	border-top:none;
+}
+.ss_input {
+	display: block;
+	float: none;
+}
+button, input, input[type="file"], select, textarea {
+	width: 95%;
+}
+.ss_rightComment {
+	display: block;
+}
+#ss_footer {
+	text-align:center;
+}
+.ss_mypage_responsive_hide {
+	display:none;
+}
+.ss_mypage_responsive_show {
+	display: block;
+	width: auto;
+}
+.ss_mypage_responsive_icon {
+	display:block;
+	float: left;
+}
+.ss_login table.ss_mypage_table th.start_day {
+	display:none;
+}
+.ss_mypage_enquete_td {
+	text-align:center !important;
+}
+.table th{
+	padding-top:5px !important;
+	padding-bottom:2px !important;
+}
+.ss_form table th.ss_cart_responsive_hide {
+	display:none;
+}
+.ss_cart_responsive_icon {
+	display:block;
+	float: left;
+}
+.recalculation {
+	margin-top:5px;
+}
+.ss_public_responsive_hide {
+	display:none !important;
+}
+.ss_public_responsive_show {
+	display: inline;
+	width: auto;
+}
+.ss_public_table td {
+	padding-top:3px;
+	padding-bottom:3px;
+}
+/*mp add end*/
+
+/* add new default template for ver 1.1.0 */
+.ss_mypage table tr {
+  display:block;
+}
+.table-bordered tbody:last-child tr:last-child > th:first-child{
+	-webkit-border-bottom-left-radius: 0;
+	border-bottom-left-radius: 0;
+	-moz-border-radius-bottomleft: 0;
+}
+.table-bordered tbody:first-child tr:first-child > td:last-child{
+	-webkit-border-top-right-radius: 0;
+	border-top-right-radius: 0;
+	-moz-border-radius-topright: 0;
+}
+/* end new default template for ver 1.1.0 */
+
+/* add new default template for ver 1.2.1 */
+/*支払方法選択画面でのクレジットカード情報のサーバ通過廃止対応*/
+.ss_cardTable input[type="text"]{
+	width:50px;
+}
+.ss_cardTable td{
+ *zoom: 1;
+}
+.ss_cardTable td:before, .ss_cardTable td:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.ss_cardTable td:after {
+	clear: both;
+}
+.ss_cardTable td .ss_msg{
+	clear: both;
+	display:block;
+}
+
+#pass_table .ss_cardTable td{
+  display:flex;
+}
+#pass_table .ss_cardTable .ss_input{
+  display:flex;
+  align-items: center;
+}
+#pass_table .ss_cardTable input[type="text"][size="25"]{
+  width:95%;
+}
+/* end new default template for ver 1.2.1 */
+
+}
