@@ -31,4 +31,13 @@
 </main>
 
 </body>
+<script>
+  for (let i = 0; i < 30; i++) {
+  setTimeout(() => {
+    const block = document.createElement('div')
+    block.textContent = i
+    document.body.appendChild(block)
+  }, 1000 + 20 * i)
+}
+  </script>
 </html>
