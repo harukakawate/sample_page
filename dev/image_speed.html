@@ -37,8 +37,8 @@
   for (let i = 1; i <= 20; i++) {
   setTimeout(() => {
     const block = document.createElement('div')
-    block.document.write('<img src="../img/'+i+'.png">')
-    //block.textContent = '<img border="0" src="../img/'+i+'.png">'
+    //block.document.write('<img src="../img/'+i+'.png">')
+    //block.innerHTML = '<img border="0" src="../img/'+i+'.png">'
     document.body.appendChild(block)
   }, 1000 + 20 * i)
 }
