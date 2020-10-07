@@ -9,8 +9,39 @@
 
 <body>
 <main>
-  <h1>GitHub Pages のサンプルです</h1>
+  <h1>¶</h1>
+  <h1>2.3. 期間化<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <span id="id1"></span><h1>4.3. エレメントのサンプル実装<a class="headerlink" href="#link-element-sample" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  
+  
+   <h1>記号</h1>
+  <p>
+↓↓ 以下のように、「intra-mart e Builder Application Developer」を４つに分割します。</p>
+   <h1>¶</h1>
+    <h1>数字と記号</h1>
+  	<p>■手順<br />１．掲示板 新着一覧画面を表示します。<br />２．新着一覧画面にて、上から4番目に表示されている記事のタイトルを押下し、記事詳細画面に遷移します。<br />３．記事詳細画面にて「移動」アイコンを押下し、記事移動画面に遷移します。<br />４．記事移動画面にて「掲示板記事参照へ」アイコンを押下し、記事詳細画面に遷移します。<br />５．記事詳細画面にて、「前へ」ボタンを押下します。<br />=> 新着一覧画面で一番上に表示されている記事の記事詳細画面が表示されてしまいます。</p>
+  
+     <h1>５桁の数字</h1>
+<blockquote>
+<div><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="E_IWP_ADMIN_ACCOUNT_10036.html">E.IWP.ADMIN.ACCOUNT.10036</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_IWP_ADMIN_ACCOUNT_10037.html">E.IWP.ADMIN.ACCOUNT.10037</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_IWP_ADMIN_ACCOUNT_10069.html">E.IWP.ADMIN.ACCOUNT.10069</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_IWP_ADMIN_ACCOUNT_10070.html">E.IWP.ADMIN.ACCOUNT.10070</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_IWP_ADMIN_ACCOUNT_10071.html">E.IWP.ADMIN.ACCOUNT.10071</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_IWP_ADMIN_ACCOUNT_10096.html">E.IWP.ADMIN.ACCOUNT.10096</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_IWP_ADMIN_CONTEXT_10004.html">E.IWP.ADMIN.CONTEXT.10004</a></li>
+</ul>
+</div>
+</div></blockquote>
+  
+  <h1>辞書登録後半角スペース</h1>
+  <span><strong>JAVAサンプルプログラム（クエリー使用）</strong></p>
+<p> package servlet;<br /> import javax.servlet.*;<br /> import javax.servlet.http.*;<br /> import java.io.*;<br /> import java.util.*;<br /> import jp.co.fit.vfreport.*; 　　　　　//SVF for WEB  パッケージのインポート<br /> public class Servlet_Sample extends HttpServlet{<br /> static Vrw32 svf = new Vrw32();  　　　　//PDF生成クラスのインスタンス生成<br /> static int ret; 　　　　//グローバル変数の初期化<br /> public void init(ServletConfig config)throws  ServletException{<br /> super.init(config); 　　　　//HTTP Post  リクエストの処理<br /> }<br /> public void doPost(HttpServletRequest  request, HttpServletResponse                         response)throws ServletException, IOException{<br /> PrintWriter out = new  PrintWriter(response.getOutputStream());<br /> response.setContentType("text/html");<br /> ret = svf.Vrinit(); 　　　　//クラスの初期化<br /> ret = svf.VrSetDocName2("レポートライターサンプル１");                         　　　　//PDFファイルのドキュメント名の設定<br /> ret =  svf.VrSetSpoolFileName2("D:\\demo\\sample.pdf"); 　　　　//PDFファイル名の設定<br /> ret = svf.VrSetForm("Sample.frm",5);  　　　　//SVFで設計したフォームの設定/<br /> ret =  svf.VrSetQuery("UID=scott;PWD=tiger","D:\\servlet\\Sample.vrq",0);　　　　// クエリーファイルの設定<br /> ret = svf.VrCondition("DEPTNO=10",0);  　　　　//クエリーの条件(Where句)の設定/<br /> ret = svf.VrReport(); 　　　　//クエリーの実行<br /> ret = svf.VrPrint(); 　　　　//PDFファイルの出力<br /> ret = svf.VrQuit(); 　　　　//PDFファイル出力処理終了<br /> out.println("&lt;html&gt;&lt;body  leftmargin=0 topmargin=0                         scroll=no&gt;)<br /> &lt;embed width=100% height=100%  fullscreen=yes<br /> src=\"<a onclick="javascript:pageTracker._trackPageview('/outgoing/10.15.20.105/DEMO/sample.pdf');" class="linkification-ext" title="Linkification:  http://10.15.20.105/DEMO/sample.pdf"  href="http://10.15.20.105/DEMO/sample.pdf">http://10.15.20.105/DEMO/sample.pdf</a>\"&gt;&lt;/body&gt;&lt;/html&gt;");                          　　　　//作成されたPDFファイルをブラウザに表示<br /> out.close();<br /> }<br /> }<br /> </span>
 
+    <h1>数字とピリオド</h1>
+  <h1>9.2.1. セットアップ・環境構築<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 </main>
 
 </body>
