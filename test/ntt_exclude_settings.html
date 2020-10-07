@@ -46,10 +46,46 @@
   <h1>9.2.1. セットアップ・環境構築<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
   
  <h1>---サンプルコード---</h1> 
-  &lt;!-- 画面上に表示されるタイトル --&gt;
+<pre>&lt;!-- HEADタグ --&gt;
+&lt;imart type="head"&gt;
+  &lt;title&gt;Hello, World&lt;/title&gt;
+  &lt;script type="text/javascript"&gt;
+    function back() {
+      $('#back-form').submit();
+    };
+  &lt;/script&gt;
+&lt;/imart&gt;
+
+&lt;!-- 画面上に表示されるタイトル --&gt;
 &lt;div class="imui-title"&gt;
   &lt;h1&gt;Hello, World (スクリプト開発)&lt;/h1&gt;
 &lt;/div&gt;
+
+&lt;!-- ツールバー(前の画面へと戻るボタンを配置) --&gt;
+&lt;div class="imui-toolbar-wrap"&gt;
+  &lt;div class="imui-toolbar-inner"&gt;
+    &lt;ul class="imui-list-toolbar"&gt;
+      &lt;li&gt;
+        &lt;!-- 「戻る」ボタンのアイコンを作成 JavaScriptの関数を呼び出す --&gt;
+        &lt;a href="javascript:back();" class="imui-toolbar-icon"　title="back"&gt;
+          &lt;span class="im-ui-icon-common-16-back"&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 出力結果 --&gt;
+&lt;div class="imui-form-container-narrow"&gt;
+  &lt;label&gt; &lt;imart type="imuiTextbox" id="result"
+      name="result" value=name class="imui-text-readonly" readonly /&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- 「戻る」ボタンのフォーム情報 actionに入力画面のパスを設定する。--&gt;
+&lt;form id="back-form" name="backForm" action="helloworld/input"
+  method="POST"&gt;&lt;/form&gt;
+</pre>
 </main>
 
 </body>
