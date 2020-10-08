@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<script src="https://shutto-translation-development-kawate.s3.amazonaws.com/trans.js?id=1583"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <script type="text/javascript" src="http://www.intra-mart.jpc747.systranlinks.net/sl_language_selector.js"></script>
+    <title>5. 作成したAPIの利用について &mdash; Web API Maker プログラミングガイド &nbsp; 第4版 2018-08-01 &nbsp; intra-mart Accel Platform</title>
+    
+    <link rel="stylesheet" href="../../_static/main.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '第4版 2018-08-01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="intra-mart Accel Platform" href="../../index.html" />
+    <link rel="next" title="6. サンプルについて" href="../about_sample/index.html" />
+    <link rel="prev" title="4. Web API Maker を利用したAPIの作成方法" href="../how_to_make_api/index.html" />
+<script type="text/javascript" src="../../_static/jquery.cookie.js"></script>
+    <!--[if IE 8]>
+      <link rel="stylesheet" href="../../_static/ie8.css" type="text/css" />
+    <![endif]-->
+    <!--[if lte IE 9.0]>
+      <script type="text/javascript">
+        window.disableQuickSearch = true;
+      </script>
+      <link rel="stylesheet" href="../../_static/ie9.css" type="text/css" />
+    <![endif]-->
+
+
+  </head>
+  <body>
+<div class="container">
+  <div class="header">
+    <div class="heading">
+      <p class="left">
+        <a href="http://www.intra-mart.jp/document/library/index.html" title="intra-mart Accel Series Document Library">
+          <span class="header-logo"></span>
+        </a>
+        <span class="name-split" style="display:none;">&nbsp;|&nbsp;</span>
+      </p>
+      <p class="right">
+        <a href="../../index.html" class="document-name">
+          <span class="product-name">intra-mart Accel Platform</span>
+          Web API Maker プログラミングガイド
+        </a>
+        <span class="heading-supplementation">第4版 2018-08-01</span>
+      </p>
+    </div>
+
+    <div class="quicksearch">
+<div id="searchbox">
+  <script type="text/javascript" src="../../_static/oktavia-jquery-ui.js"></script>
+  <link rel="stylesheet" href="../../_static/searchstyle.css" type="text/css" />
+  <div id="oktavia_search_form" data-index="searchindex.oktavia.js">
+    <form class="oktavia_form">
+      <label>クイック検索</label>
+      <input class="oktavia_search" result="10" type="search" name="search" value="" placeholder="クイック検索" />
+      <input type="submit" value="検索" />
+    </form>
+  </div>
+</div>
+<!--
+<div id="searchbox" class="hoge" style="display: none">
+  <label>クイック検索</label>
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="クイック検索" />
+    <input type="submit" value="検索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+-->
+    </div>
+  </div>
+
+  <div class="pdf-header">
+    <div class="left"><span class="header-logo"></span></div>
+    <div class="right">
+      <span class="product-name">intra-mart Accel Platform</span>
+      <span class="shorttitle">Web API Maker プログラミングガイド</span>
+      <span class="heading-supplementation">第4版 2018-08-01</span>
+    </div>
+  </div>
+
+  <div class="nav topnav">
+    
+  <p class="cf">
+    <a class="uplink" href="../../index.html">目次</a>
+    <a class="prev-link" href="../how_to_make_api/index.html"><span class="mark">&#8810;&#160;&#160;</span><span class="index-title">4. Web API Maker を利用したAPIの作成方法</span></a>
+    <a class="next-link" href="../about_sample/index.html"><span class="index-title">6. サンプルについて</span><span class="mark">&#160;&#160;&#8811;</span></a>
+  </p>
+
+  </div>
+
+  <div class="wrapper">
+      <div id="sidebar-left" class="sidebar active">
+        
+    <div class="sphinxsidebar">
+      <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">目次</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../revision_history/index.html">1. 改訂情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">2. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">3. Web API Maker 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to_make_api/index.html">4. Web API Maker を利用したAPIの作成方法</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">5. 作成したAPIの利用について</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use">5.1. 利用方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">5.2. セッション管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api-spec">5.3. API仕様を参照する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#webapi">5.4. Web上からAPI仕様を参照し実行する</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about_sample/index.html">6. サンプルについて</a></li>
+</ul>
+
+      </div>
+    </div>
+      </div>
+      <div class="content">
+        
+<blockquote>
+<div></div></blockquote>
+<div class="section" id="api">
+<h1>5. 作成したAPIの利用について<a class="headerlink" href="#api" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="contents local topic" id="id1">
+<p class="topic-title first">項目</p>
+<ul class="simple">
+<li><a class="reference internal" href="#how-to-use" id="id5">利用方法</a></li>
+<li><a class="reference internal" href="#id3" id="id6">セッション管理</a></li>
+<li><a class="reference internal" href="#api-spec" id="id7">API仕様を参照する</a></li>
+<li><a class="reference internal" href="#webapi" id="id8">Web上からAPI仕様を参照し実行する</a></li>
+</ul>
+</div>
+<div class="section" id="how-to-use">
+<span id="id2"></span><h2><a class="toc-backref" href="#id5">5.1. 利用方法</a><a class="headerlink" href="#how-to-use" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>&#64;Path</strong> で指定した URL にアクセスすると REST-API が実行可能です。</div>
+<div class="line"><br /></div>
+<div class="line">Web API Maker では、データの受け渡しには標準でJSON、XMLの2種類のフォーマットに対応しています。</div>
+<div class="line">クライアントからのデータ送信時に、ひとまとまりのオブジェクト情報を送信する際は、オブジェクトを各フォーマットでリクエストボディに含める事が可能です。</div>
+<div class="line">サーバからの戻り値も、このフォーマットです。</div>
+<div class="line">利用するフォーマットはリクエストヘッダの値を利用して決定します。</div>
+</div>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>リクエストヘッダ <strong>Content-Type</strong></dt>
+<dd><div class="first last line-block">
+<div class="line">メッセージボディにオブジェクトを含める際に指定します。</div>
+<div class="line">JSONの場合は、 <strong>application/json</strong> 、XMLの場合は、 <strong>application/xml</strong> と指定します。</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>リクエストヘッダ <strong>Accept</strong></dt>
+<dd><div class="first last line-block">
+<div class="line">戻り情報のフォーマットを指定します。</div>
+<div class="line">JSONの場合は、 <strong>application/json</strong> 、XMLの場合は、 <strong>application/xml</strong> と指定します。</div>
+<div class="line"><strong>404などのエラー時は指定した形式となる保証はありません。</strong></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line">戻り値の例は以下の通りです。（application/json場合）</div>
+</div>
+<blockquote>
+<div><div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dog&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sold&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;attibute&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;breed&quot;</span><span class="p">:</span> <span class="s2">&quot;golden&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;errorMessage&quot;</span><span class="p">:</span> <span class="s2">&quot;[E.IWP.WEBAPIMAKER.CONVERTER.10001] JSON文字列からの変換に失敗しました。 json:434343&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">コラム</p>
+<p class="last">値がnullであるプロパティはJSON、XML共に出力されません。</p>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">また、レスポンスされる HTTP ステータスは、以下の通りです。</div>
+</div>
+<blockquote>
+<div><table border="1" class="docutils">
+<caption>レスポンスされる HTTP ステータスの種類</caption>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><strong>200 OK</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Accept ヘッダで指定された MIME タイプで処理結果を返却します。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><strong>400 Bad Request</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">リクエストの内容が不正です。</div>
+<div class="line">Content-Type が application/json だが JSON 文字列でない 等が考えられます。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><strong>401 Unauthorized</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">未認証状態で、認可が通りません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><strong>403 Forbidden</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">認証済み状態ですが、認可が通りません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><strong>404 Not Found</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">URL が定義されていません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><strong>405 Method Not Allowed</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">そのメソッドではアクセスできません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><strong>406 Not Acceptable</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Accept ヘッダに指定されているタイプが全部サポートしておらず、レスポンスを返すことができません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><strong>415 Unsupported Media Type</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Content-Type ヘッダに指定されているタイプがサポートしておらず、リクエストを読むことができません。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><strong>500 Internal Server Error</strong></div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">内部サーバエラーです。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id6">5.2. セッション管理</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">Web API Maker では、リクエストヘッダ <strong>X-Intramart-Session</strong> を指定することによりセッション管理を行えます。</div>
+<div class="line">X-Intramart-Sessionには、 <strong>keep</strong> , <strong>once</strong> , <strong>never</strong> の３つの値が利用できます。</div>
+<div class="line">ヘッダを省略した場合は keep を指定した場合の挙動と同じです。</div>
+<div class="line">指定した値による挙動は認証方式によって以下のように異なります。</div>
+</div>
+<blockquote>
+<div><table border="1" class="docutils">
+<caption>IMAuthenticationの場合</caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">X-Intramart-Session</th>
+<th class="head">動作</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>keep</td>
+<td>セッション管理を何も行いません。</td>
+</tr>
+<tr class="row-odd"><td>once</td>
+<td>セッション管理を何も行いません。</td>
+</tr>
+<tr class="row-even"><td>never</td>
+<td>Web API実行後にログイン状態である場合、ログアウトを行います。</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>BasicAuthenticationの場合</caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">X-Intramart-Session</th>
+<th class="head">動作</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>keep</td>
+<td>認証済みでない場合は、Web API実行前にログインを行います。実行後は何も行いません。</td>
+</tr>
+<tr class="row-odd"><td>once</td>
+<td>認証済みでない場合は、Web API実行前にログインを行います。Web API実行前に未認証であった場合はログアウトを行います。</td>
+</tr>
+<tr class="row-even"><td>never</td>
+<td>認証済みでない場合は、Web API実行前にログインを行います。Web API実行後にログイン状態である場合、ログアウトを行います。</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<caption>OAuthの場合</caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">X-Intramart-Session</th>
+<th class="head">動作</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>keep</td>
+<td>認証済みでない場合は、Web API実行前にログインを行います。実行後は何も行いません。</td>
+</tr>
+<tr class="row-odd"><td>once</td>
+<td>認証済みでない場合は、Web API実行前にログインを行います。Web API実行前に未認証であった場合はログアウトを行います。</td>
+</tr>
+<tr class="row-even"><td>never</td>
+<td>認証済みでない場合は、Web API実行前にログインを行います。Web API実行前に未認証であった場合はログアウトを行います。</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="api-spec">
+<span id="id4"></span><h2><a class="toc-backref" href="#id7">5.3. API仕様を参照する</a><a class="headerlink" href="#api-spec" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">以下のURLにてAPIの仕様を返すJSONを取得可能です。</div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http:/">http:/</a>/&lt;HOST&gt;:&lt;PORT&gt;/&lt;CONTEXT_PATH&gt;/api-docs/${api-category}</li>
+</ul>
+<div class="line-block">
+<div class="line">${api-category} はサービスクラスで指定している <strong>&#64;Category</strong> アノテーションのvalue値です。</div>
+</div>
+<blockquote>
+<div><div class="admonition warning">
+<p class="first admonition-title">注意</p>
+<div class="last line-block">
+<div class="line">上記のAPI仕様のURLは認可によって閲覧を制限することが可能です。</div>
+<div class="line">リソース名は「Swagger specification」です。</div>
+<div class="line">認可 については「<a class="reference external" href="http://www.intra-mart.jp/document/library/iap/public/im_authz/im_authz_specification/index.html">認可仕様書</a>」を参照してください。</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">注意</p>
+<div class="last line-block">
+<div class="line">API仕様出力を行えるサービスクラスは、 <strong>&#64;IMAuthentication</strong> が付与されている物のみです。</div>
+<div class="line">&#64;IMAuthentication が付与されておらず、 &#64;OAuth または &#64;BasicAuthentication が付与されているサービスクラスの仕様は出力できません。</div>
+</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="webapi">
+<span id="swagger-ui"></span><h2><a class="toc-backref" href="#id8">5.4. Web上からAPI仕様を参照し実行する</a><a class="headerlink" href="#webapi" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">以下のURLにてswagger uiを表示できます。</div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http:/">http:/</a>/&lt;HOST&gt;:&lt;PORT&gt;/&lt;CONTEXT_PATH&gt;/swagger_ui/</li>
+</ul>
+<div class="line-block">
+<div class="line">ページ上部のテキストボックスにてAPI仕様のURL（<a class="reference external" href="http:/">http:/</a>/&lt;HOST&gt;:&lt;PORT&gt;/&lt;CONTEXT_PATH&gt;/api-docs/${api-category}）を入力することで仕様の表示、実行が可能です。</div>
+</div>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/swagger_ui.png"><img alt="swagger_ui" src="../../_images/swagger_ui.png" style="width: 992.0px; height: 639.0px;" /></a>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+      </div>
+      <div id="sidebar-right" class="sidebar">
+        
+    <div class="sphinxsidebar">
+      <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">目次</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../revision_history/index.html">1. 改訂情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">2. はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">3. Web API Maker 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to_make_api/index.html">4. Web API Maker を利用したAPIの作成方法</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">5. 作成したAPIの利用について</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use">5.1. 利用方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">5.2. セッション管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api-spec">5.3. API仕様を参照する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#webapi">5.4. Web上からAPI仕様を参照し実行する</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about_sample/index.html">6. サンプルについて</a></li>
+</ul>
+
+      </div>
+    </div>
+      </div>
+  </div>
+
+  <div class="nav bottomnav">
+    
+  <p class="cf">
+    <a class="uplink" href="../../index.html">目次</a>
+    <a class="prev-link" href="../how_to_make_api/index.html"><span class="mark">&#8810;&#160;&#160;</span><span class="index-title">4. Web API Maker を利用したAPIの作成方法</span></a>
+    <a class="next-link" href="../about_sample/index.html"><span class="index-title">6. サンプルについて</span><span class="mark">&#160;&#160;&#8811;</span></a>
+  </p>
+
+  </div>
+
+  <div class="footer">
+    <hr class="bar" />
+    <div class="inner">
+      <p class="copyright">
+           Copyright &copy; 2015 NTT DATA INTRAMART CORPORATION 
+      </p>
+      <a id="disp-sidebar-switch-btn" class="sidebar-button" title="Switch sidebar position"><span class="mark"></span><span class="text">&#x21C4; Sidebar</span></a>
+      <a class="page-top" href="#" title="Go to page top"><span class="mark">&uarr;</span><span class="text">Top</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function($) {
+    $(document).ready(function() {
+      var setPosition = function(position) {
+        if (position === 'left') {
+          $.cookie('im-document-library', 'left', {expires: 30, path: '/'});
+        } else {
+          $.cookie('im-document-library', 'right', {expires: 30, path: '/'});
+        }
+      }
+
+      if ($.cookie('im-document-library') == 'right') {
+        $("#sidebar-right").addClass('active');
+        $("#sidebar-left").removeClass('active');
+      }
+
+      $("#disp-sidebar-switch-btn").click(function() {
+        $("#sidebar-right").toggleClass('active');
+        $("#sidebar-left").toggleClass('active');
+        if ($('#sidebar-left').hasClass('active')) {
+          setPosition('left');
+        } else {
+          setPosition('right');
+        }
+      });
+      // ページ内遷移のときに、スクロールの位置がヘッダー分ずれる不具合の対応
+      $('a').click(function(e){
+        var _href = $(this).attr('href');
+        if (_href != null) {
+          if (_href.length > 2) {
+            if (_href.indexOf('#') == 0) {
+              setTimeout(function() {
+                var $id = $(_href.replace( /(:|\.|\[|\]|\(|\))|,/g, "\\$1" ));
+                $(document).scrollTop($id.position().top);
+              },1);
+            }
+          }
+        }
+      })
+      // 異なるページからアンカーを指定された場合、スクロールの位置がヘッダー分ずれる不具合の対応
+      if (window.location.hash.length > 0) {
+        setTimeout(function(){
+          var $id = $(decodeURIComponent(window.location.hash).replace( /(:|\.|\[|\]|\(|\))|,/g, "\\$1" ));
+          if ($id.length > 0) {
+            $(document).scrollTop($id.position().top);
+          }
+        },50);
+      }
+    });
+  })(jQuery);
+</script>
+<script>
+    $('a.reference.external').click(function(){
+        window.open($(this).attr('href'));
+        return false;
+     });
+</script>
+
+  </body>
+</html>
