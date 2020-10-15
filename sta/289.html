@@ -1,0 +1,861 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width, minimal-ui" id="viewport">
+<link rel="icon" href="https://www.funabashi-multilingual.info/images/main-favicon.ico">	
+
+<link rel="stylesheet" type="text/css" href="https://www.funabashi-multilingual.info/css/common.css">
+<link rel="stylesheet" type="text/css" href="https://www.funabashi-multilingual.info/css/layout.css">
+<link rel="stylesheet" type="text/css" href="https://www.funabashi-multilingual.info/css/element.css">
+<link rel="stylesheet" type="text/css" href="https://www.funabashi-multilingual.info/css/element_page.css">
+<link rel="stylesheet" type="text/css" href="https://www.funabashi-multilingual.info/css/parts.css">
+	
+<!-- font -->
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+
+<!--▼mailformpro-->
+<link rel="stylesheet" href="/css/mailformpro.css" type="text/css" />
+
+<script src="https://www.funabashi-multilingual.info/js/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="https://www.funabashi-multilingual.info/js/jquery.matchHeight.js"></script>
+
+<!--▼スムーススクロール-->
+<script src="https://www.funabashi-multilingual.info/js/smooth-scroll.js"></script>
+	
+<!--▼spメニュー表示-->
+<script type="text/javascript">
+(function($) {
+    $(function () {
+      $('#nav-toggle').on('click', function() {
+        $('body').toggleClass('open');
+      });
+    });
+})(jQuery);
+</script>
+
+<!--▼言語切り替えボタンONOFF-->
+<script src="https://d.shutto-translation.com/trans.js?id=836"></script>
+<script type="text/javascript">
+  $('.gNav li a').each(function(){
+    var $href = $(this).attr('href');
+    if(location.href.match($href)) {
+      $(this).parent().addClass('current');
+    } else {
+      $(this).parent().removeClass('current');
+    }
+  });
+</script>
+<!-- KanaboWeb S-->
+<script type="text/javascript" src="https://www.funabashi-multilingual.info/js/kanaboweb_s.1.0.7.js"></script>
+<script language="JavaScript">
+	KanaboWeb.host_id = "info.funabashi-ml";
+
+	// ふりがな変換が正常に完了した場合に呼ばれるイベントハンドラ
+	KanaboWeb.onTranslated = function() {
+		try {
+        
+        document.getElementById("infoTop").classList.add("block")
+        document.getElementById("infoBottom").classList.add("block")
+        
+        <!--▼spメニュー表示-->
+      $('#nav-toggle').on('click', function() {
+        $('body').toggleClass('open');
+      });
+        
+        <!--▼言語切り替えボタンONOFF-->
+    var $href = $(this).attr('href');
+    if(location.href.match($href)) {
+      $(this).parent().addClass('current');
+    } else {
+      $(this).parent().removeClass('current');
+    }
+
+			<!--上固定メニュー-->
+			var navBox = $("#headbar");
+			navBox.hide();
+			var TargetPos = 200;
+			$(window).scroll( function() {
+				var ScrollPos = $(window).scrollTop();
+				if( ScrollPos > TargetPos ) {
+					navBox.fadeIn();
+				} else {
+					navBox.fadeOut();
+				}
+			});
+
+
+			<!--メインビジュアルスクロール-->
+		     	if (window.matchMedia( '(min-width: 959px)' ).matches) 
+			{
+				$('.main-content-wrapper').stickyStack({
+					containerElement: '.main-content-wrapper', //対象要素
+					stackingElement: '.block_wrap', //区切りとなる要素
+					boxShadow: '0 -3px 20px rgba(0, 0, 0, 0.25)' //区切りの影
+				});
+     			} else {
+			};
+        
+<!--言語ボタンアコーディオン-->
+$('#top_fix_menu .language a').on('click', function () {
+$('#top_fix_menu .pc_gNav').slideToggle('active');
+});
+$('#fade-in .language a').on('click', function () {
+$('#fade-in .pc_gNav').slideToggle('active');
+});
+
+<!--スムーススクロール-->
+var scroll = new SmoothScroll('[data-scroll]');
+
+<!--MatchHeight 高さ揃え-->
+;(function(factory) { // eslint-disable-line no-extra-semi
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof module !== 'undefined' && module.exports) {
+        // CommonJS
+        module.exports = factory(require('jquery'));
+    } else {
+        // Global
+        factory(jQuery);
+    }
+})(function($) {
+    /*
+    *  internal
+    */
+
+    var _previousResizeWidth = -1,
+        _updateTimeout = -1;
+
+    /*
+    *  _parse
+    *  value parse utility function
+    */
+
+    var _parse = function(value) {
+        // parse value and convert NaN to 0
+        return parseFloat(value) || 0;
+    };
+
+    /*
+    *  _rows
+    *  utility function returns array of jQuery selections representing each row
+    *  (as displayed after float wrapping applied by browser)
+    */
+
+    var _rows = function(elements) {
+        var tolerance = 1,
+            $elements = $(elements),
+            lastTop = null,
+            rows = [];
+
+        // group elements by their top position
+        $elements.each(function(){
+            var $that = $(this),
+                top = $that.offset().top - _parse($that.css('margin-top')),
+                lastRow = rows.length > 0 ? rows[rows.length - 1] : null;
+
+            if (lastRow === null) {
+                // first item on the row, so just push it
+                rows.push($that);
+            } else {
+                // if the row top is the same, add to the row group
+                if (Math.floor(Math.abs(lastTop - top)) <= tolerance) {
+                    rows[rows.length - 1] = lastRow.add($that);
+                } else {
+                    // otherwise start a new row group
+                    rows.push($that);
+                }
+            }
+
+            // keep track of the last row top
+            lastTop = top;
+        });
+
+        return rows;
+    };
+
+    /*
+    *  _parseOptions
+    *  handle plugin options
+    */
+
+    var _parseOptions = function(options) {
+        var opts = {
+            byRow: true,
+            property: 'height',
+            target: null,
+            remove: false
+        };
+
+        if (typeof options === 'object') {
+            return $.extend(opts, options);
+        }
+
+        if (typeof options === 'boolean') {
+            opts.byRow = options;
+        } else if (options === 'remove') {
+            opts.remove = true;
+        }
+
+        return opts;
+    };
+
+    /*
+    *  matchHeight
+    *  plugin definition
+    */
+
+    var matchHeight = $.fn.matchHeight = function(options) {
+        var opts = _parseOptions(options);
+
+        // handle remove
+        if (opts.remove) {
+            var that = this;
+
+            // remove fixed height from all selected elements
+            this.css(opts.property, '');
+
+            // remove selected elements from all groups
+            $.each(matchHeight._groups, function(key, group) {
+                group.elements = group.elements.not(that);
+            });
+
+            // TODO: cleanup empty groups
+
+            return this;
+        }
+
+        if (this.length <= 1 && !opts.target) {
+            return this;
+        }
+
+        // keep track of this group so we can re-apply later on load and resize events
+        matchHeight._groups.push({
+            elements: this,
+            options: opts
+        });
+
+        // match each element's height to the tallest element in the selection
+        matchHeight._apply(this, opts);
+
+        return this;
+    };
+
+    /*
+    *  plugin global options
+    */
+
+    matchHeight.version = 'master';
+    matchHeight._groups = [];
+    matchHeight._throttle = 80;
+    matchHeight._maintainScroll = false;
+    matchHeight._beforeUpdate = null;
+    matchHeight._afterUpdate = null;
+    matchHeight._rows = _rows;
+    matchHeight._parse = _parse;
+    matchHeight._parseOptions = _parseOptions;
+
+    /*
+    *  matchHeight._apply
+    *  apply matchHeight to given elements
+    */
+
+    matchHeight._apply = function(elements, options) {
+        var opts = _parseOptions(options),
+            $elements = $(elements),
+            rows = [$elements];
+
+        // take note of scroll position
+        var scrollTop = $(window).scrollTop(),
+            htmlHeight = $('html').outerHeight(true);
+
+        // get hidden parents
+        var $hiddenParents = $elements.parents().filter(':hidden');
+
+        // cache the original inline style
+        $hiddenParents.each(function() {
+            var $that = $(this);
+            $that.data('style-cache', $that.attr('style'));
+        });
+
+        // temporarily must force hidden parents visible
+        $hiddenParents.css('display', 'block');
+
+        // get rows if using byRow, otherwise assume one row
+        if (opts.byRow && !opts.target) {
+
+            // must first force an arbitrary equal height so floating elements break evenly
+            $elements.each(function() {
+                var $that = $(this),
+                    display = $that.css('display');
+
+                // temporarily force a usable display value
+                if (display !== 'inline-block' && display !== 'flex' && display !== 'inline-flex') {
+                    display = 'block';
+                }
+
+                // cache the original inline style
+                $that.data('style-cache', $that.attr('style'));
+
+                $that.css({
+                    'display': display,
+                    'padding-top': '0',
+                    'padding-bottom': '0',
+                    'margin-top': '0',
+                    'margin-bottom': '0',
+                    'border-top-width': '0',
+                    'border-bottom-width': '0',
+                    'height': '100px',
+                    'overflow': 'hidden'
+                });
+            });
+
+            // get the array of rows (based on element top position)
+            rows = _rows($elements);
+
+            // revert original inline styles
+            $elements.each(function() {
+                var $that = $(this);
+                $that.attr('style', $that.data('style-cache') || '');
+            });
+        }
+
+        $.each(rows, function(key, row) {
+            var $row = $(row),
+                targetHeight = 0;
+
+            if (!opts.target) {
+                // skip apply to rows with only one item
+                if (opts.byRow && $row.length <= 1) {
+                    $row.css(opts.property, '');
+                    return;
+                }
+
+                // iterate the row and find the max height
+                $row.each(function(){
+                    var $that = $(this),
+                        style = $that.attr('style'),
+                        display = $that.css('display');
+
+                    // temporarily force a usable display value
+                    if (display !== 'inline-block' && display !== 'flex' && display !== 'inline-flex') {
+                        display = 'block';
+                    }
+
+                    // ensure we get the correct actual height (and not a previously set height value)
+                    var css = { 'display': display };
+                    css[opts.property] = '';
+                    $that.css(css);
+
+                    // find the max height (including padding, but not margin)
+                    if ($that.outerHeight(false) > targetHeight) {
+                        targetHeight = $that.outerHeight(false);
+                    }
+
+                    // revert styles
+                    if (style) {
+                        $that.attr('style', style);
+                    } else {
+                        $that.css('display', '');
+                    }
+                });
+            } else {
+                // if target set, use the height of the target element
+                targetHeight = opts.target.outerHeight(false);
+            }
+
+            // iterate the row and apply the height to all elements
+            $row.each(function(){
+                var $that = $(this),
+                    verticalPadding = 0;
+
+                // don't apply to a target
+                if (opts.target && $that.is(opts.target)) {
+                    return;
+                }
+
+                // handle padding and border correctly (required when not using border-box)
+                if ($that.css('box-sizing') !== 'border-box') {
+                    verticalPadding += _parse($that.css('border-top-width')) + _parse($that.css('border-bottom-width'));
+                    verticalPadding += _parse($that.css('padding-top')) + _parse($that.css('padding-bottom'));
+                }
+
+                // set the height (accounting for padding and border)
+                $that.css(opts.property, (targetHeight - verticalPadding) + 'px');
+            });
+        });
+
+        // revert hidden parents
+        $hiddenParents.each(function() {
+            var $that = $(this);
+            $that.attr('style', $that.data('style-cache') || null);
+        });
+
+        // restore scroll position if enabled
+        if (matchHeight._maintainScroll) {
+            $(window).scrollTop((scrollTop / htmlHeight) * $('html').outerHeight(true));
+        }
+
+        return this;
+    };
+
+    /*
+    *  matchHeight._applyDataApi
+    *  applies matchHeight to all elements with a data-match-height attribute
+    */
+
+    matchHeight._applyDataApi = function() {
+        var groups = {};
+
+        // generate groups by their groupId set by elements using data-match-height
+        $('[data-match-height], [data-mh]').each(function() {
+            var $this = $(this),
+                groupId = $this.attr('data-mh') || $this.attr('data-match-height');
+
+            if (groupId in groups) {
+                groups[groupId] = groups[groupId].add($this);
+            } else {
+                groups[groupId] = $this;
+            }
+        });
+
+        // apply matchHeight to each group
+        $.each(groups, function() {
+            this.matchHeight(true);
+        });
+    };
+
+    /*
+    *  matchHeight._update
+    *  updates matchHeight on all current groups with their correct options
+    */
+
+    var _update = function(event) {
+        if (matchHeight._beforeUpdate) {
+            matchHeight._beforeUpdate(event, matchHeight._groups);
+        }
+
+        $.each(matchHeight._groups, function() {
+            matchHeight._apply(this.elements, this.options);
+        });
+
+        if (matchHeight._afterUpdate) {
+            matchHeight._afterUpdate(event, matchHeight._groups);
+        }
+    };
+
+    matchHeight._update = function(throttle, event) {
+        // prevent update if fired from a resize event
+        // where the viewport width hasn't actually changed
+        // fixes an event looping bug in IE8
+        if (event && event.type === 'resize') {
+            var windowWidth = $(window).width();
+            if (windowWidth === _previousResizeWidth) {
+                return;
+            }
+            _previousResizeWidth = windowWidth;
+        }
+
+        // throttle updates
+        if (!throttle) {
+            _update(event);
+        } else if (_updateTimeout === -1) {
+            _updateTimeout = setTimeout(function() {
+                _update(event);
+                _updateTimeout = -1;
+            }, matchHeight._throttle);
+        }
+    };
+
+    /*
+    *  bind events
+    */
+
+    // apply on DOM ready event
+    $(matchHeight._applyDataApi);
+
+    // use on or bind where supported
+    var on = $.fn.on ? 'on' : 'bind';
+
+    // update heights on load and resize events
+    $(window)[on]('load', function(event) {
+        matchHeight._update(false, event);
+    });
+
+    // throttled update heights on resize events
+    $(window)[on]('resize orientationchange', function(event) {
+        matchHeight._update(true, event);
+    });
+
+});
+
+
+$(function(){
+　　$('.matchHeight-group1').matchHeight();
+　　$('.matchHeight-group2').matchHeight();
+　　$('.matchHeight-walk').matchHeight();
+　　$('.matchHeight-walk2').matchHeight();
+　　$('.matchHeight-akihaku1').matchHeight();
+　　$('.matchHeight-akihaku2').matchHeight();
+　　$('.matchHeight-column1').matchHeight();
+　　$('.matchHeight-column2').matchHeight();
+　　$('.matchHeight-kanren').matchHeight();
+　　$('.matchHeight-trivia').matchHeight();
+　　$('.matchHeight-columnist1').matchHeight();
+　　$('.matchHeight-columnist2').matchHeight();
+});
+
+/***
+			// $document.ready()をトリガーで手動で発火
+			jQuery(document).trigger('DOMContentLoaded');
+***/
+		} catch (e) {
+		}
+	};
+</script>
+<style>
+.f_on
+{ 
+	display: inline; 
+}
+.f_off
+{ 
+	display: none; 
+}
+.furigana .f_on
+{ 
+	display: none; 
+}
+.furigana .f_off
+{ 
+	display: inline; 
+}
+</style>
+<!-- KanaboWeb S-->
+
+<!--▼郵便番号自動入力-->
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+	
+<title>翻訳テスト｜船橋市外国人総合相談窓口 Funabashi Multilinguallnformation Center</title>
+<meta name="description" content=""/>
+<link rel="canonical" href="https://www.funabashi-multilingual.info/" />
+<script src="https://d.shutto-translation.com/trans.js?id=836"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96995444-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-96995444-4');
+</script>
+</head>
+
+<body>
+<div id="infoTop">このページのふりがなは、自動的に表示しています。人名や地名、用語などが正確に表示されない場合がありますので、ご了承ください。</div>
+	
+
+<div id="wrap" class="main-content-wrapper">
+		
+	
+	
+    <div class="block_wrap block_one">
+	
+	
+		<div id="top_fix_menu">
+			
+			
+<section>
+ <header class="cf">
+  <div class="logo_area"> <a href="https://www.funabashi-multilingual.info/"><span class="jp">船橋市外国人総合相談窓口</span><br><span class="en">Funabashi Multilingual lnformation Center</span></a> </div>
+  <div class="right_area cf">
+  <div class="hurigana"><span class="f_on"><a href="javascript:KanaboWeb.execCommand('on')"><img src="https://www.funabashi-multilingual.info/images/top/icon_head_hurigana.png"><br>ふりがな</a></span><span class="f_off"><a href="javascript:KanaboWeb.execCommand('off')"><img src="https://www.funabashi-multilingual.info/images/top/icon_head_hurigana.png"><br>はずす</a></span></div>
+   <div class="language"><a href="javascript:void(0);"><img src="https://www.funabashi-multilingual.info/images/top/icon_head_language.png"><br>言語</a></div>
+   <div class="tel_area">
+    <div class="tel">050-3101-3495</div> 受付時間 :平日 午前9時～午後5時 <a class="sp" href="tel:050-3101-3495">050-3101-3495</a> </div>
+  </div>
+  <!--right_area-->
+ </header>
+ <div class="language_btn_area cf">
+  <ul class="gNav pc_gNav cf">
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="ja" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn01_on.png" alt="日本語" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn01.png" alt="日本語" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="fy" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn02.png" alt="やさしいにほんご" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn02_on.png" alt="やさしいにほんご" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="en" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn03.png" alt="English" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn03_on.png" alt="English" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="zh-CN" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn04.png" alt="中文" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn04_on.png" alt="中文" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="ko" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn05.png" alt="한국어" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn05_on.png" alt="한국어" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="vi" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn06.png" alt="Tiếng việt nam" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn06_on.png" alt="Tiếng việt nam" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="ne" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn07.png" alt="नेपाली भाषा" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn07_on.png" alt="नेपाली भाषा" class="navOn"></a></li>
+   <li class="gNavBtn"></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="id" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn08.png" alt="Bahasa Indonesia" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn08_on.png" alt="Bahasa Indonesia" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="tl" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn09.png" alt="Tagalog" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn09_on.png" alt="Tagalog" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="th" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn10.png" alt="ภาษาไทย" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn10_on.png" alt="ภาษาไทย" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="pt" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn11.png" alt="Português" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn11_on.png" alt="Português" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="es" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn12.png" alt="Español" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn12_on.png" alt="Español" class="navOn"></a></li>
+   <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="hi" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn13.png" alt="" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn13_on.png" alt="" class="navOn"></a></li>
+  </ul>
+ </div>
+</section>
+<ul class="main_menu"><section class="cf"><li><a data-mh="main_menu" href="https://www.funabashi-multilingual.info/usage/">相談方法</a></li><li><a data-mh="main_menu" href="https://www.funabashi-multilingual.info/guide/">ふなばし生活ガイド</a></li><li><a data-mh="main_menu" href="https://www.funabashi-multilingual.info/beginner/">初めての方へ</a></li><li><a data-mh="main_menu" href="https://www.funabashi-multilingual.info/faq/">よくある質問</a></li></section></ul>
+			
+			
+	<div class="top_bg page test_only">
+			
+			
+			<div id="mainVisual">
+				<section>
+			  
+				  
+				  <div class="mainVisual_area">
+				  	<h2>翻訳テスト</h2>
+				  </div>
+					
+				
+				</section>
+			</div><!--mainVisual-->
+			
+		</div><!--top_bg-->
+			
+			
+			
+			
+			
+			
+		</div><!--#top_fix_menu-->
+		
+	</div><!--block_wrap block_one-->
+	
+	
+    <div class="block_wrap block_two">
+	
+	
+		<div id="wrapper" class="page">
+
+			
+<div id="nav-toggle" class="sp">
+ <div> <span></span> <span></span> <span></span> </div>
+</div>
+<div id="gloval-nav" class="sp">
+ <nav>
+  <div class="sp_menu_area">
+   <div class="inner">
+    <section>
+     <div class="tel_area">
+      <div class="tel">050-3101-3495</div> 受付時間 :平日 午前9時～午後5時 <a href="tel:050-3101-3495">050-3101-3495</a> </div>
+     <div class="sp_menu_link">
+      <ul class="cf">
+       <li><a href="https://www.funabashi-multilingual.info/usage/">相談方法</a></li>
+       <li><a href="https://www.funabashi-multilingual.info/guide/">ふなばし生活ガイド</a></li>
+       <li><a href="https://www.funabashi-multilingual.info/beginner/">初めての方へ</a></li>
+       <li><a href="https://www.funabashi-multilingual.info/faq/">よくある質問</a></li>
+      </ul>
+     </div>
+    </section>
+    <div class="sp_menu_foot">
+     <section>
+      <div class="foot_logo text_center">
+       <div class="logo_area">
+        <div class="jp">船橋市外国人総合相談窓口</div>
+        <div class="en">Funabashi Multilinguallnformation Center</div>
+       </div>
+      </div>
+     </section>
+     <div class="copyright">
+      <section> © 2019 船橋市外国人総合相談窓口 </section>
+     </div>
+    </div>
+    <!--sp_menu_foot-->
+   </div>
+   <!--inner-->
+  </div>
+  <!--sp_menu_btn-->
+ </nav>
+</div>
+<!--gloval-nav-->
+			
+			
+			
+			<div class="pnkz">
+				<section>
+					<a href="https://www.funabashi-multilingual.info/">ホーム</a> &gt; 
+    <span class="color_blue">翻訳テスト</span>
+				</section>
+			</div>
+			
+			
+			
+			
+			
+<div id="pageArea">
+              <section>
+              
+              <p><span>「船橋市外国人総合相談窓口」は、船橋市役所11階・国際交流課内に開設された、外国人住民の皆さまのご相談に応じる総合的な窓口です。</span><br><br><span>窓口の開設時間は、月曜日から金曜日の午前９時～午後５時です（昼休み中もご利用いただけます）。ただし、祝休日・年末年始はお休みです。</span></p>
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+              </section>
+          </div><!--pageArea-->
+			
+			
+			
+			
+			
+			
+<footer id="footer">
+ <section>
+  <div class="foot_logo">
+   <div class="logo_area">
+    <div class="jp">船橋市外国人総合相談窓口</div>
+    <div class="en">Funabashi Multilingual lnformation Center</div>
+   </div>
+  </div>
+  <div class="foot_link">
+   <ul class="cf">
+    <li><a href="https://www.funabashi-multilingual.info/usage/">相談方法</a></li>
+    <li><a href="https://www.funabashi-multilingual.info/guide/">ふなばし生活ガイド</a></li>
+    <li><a href="https://www.funabashi-multilingual.info/beginner/">初めての方へ</a></li>
+    <li><a href="https://www.funabashi-multilingual.info/faq/">よくある質問</a></li>
+   </ul>
+  </div>
+ </section>
+</footer>
+
+<div class="copyright">
+ <section> © 2019 船橋市外国人総合相談窓口 </section>
+</div>
+<div id="infoBottom">このページのふりがなは、自動的に表示しています。人名や地名、用語などが正確に表示されない場合がありますので、ご了承ください。</div>
+<div class="pagetopButton"><a data-scroll href="#wrap">▲</a></div>
+<div id="headbar">
+ <div id="fade-in" class="dropmenu topmenu">
+  <section>
+   <header class="cf">
+    <div class="logo_area"> <a href="https://www.funabashi-multilingual.info/"><span class="jp">船橋市外国人総合相談窓口</span><br><span class="en">Funabashi Multilingual lnformation Center</span></a> </div>
+    <div class="right_area cf">
+	<div class="hurigana">	
+		<span class="f_on"><a href="javascript:KanaboWeb.execCommand('on')"><img src="https://www.funabashi-multilingual.info/images/top/icon_head_hurigana.png"><br>ふりがな</a></span><span class="f_off"><a href="javascript:KanaboWeb.execCommand('off')"><img src="https://www.funabashi-multilingual.info/images/top/icon_head_hurigana.png"><br>はずす</a></span>
+		</div>	
+     <div class="language"><a href="javascript:void(0);"><img src="https://www.funabashi-multilingual.info/images/top/icon_head_language.png"><br>言語</a></div>
+     <div class="tel_area">
+      <div class="tel">050-3101-3495</div> 受付時間 :平日 午前9時～午後5時 <a class="sp" href="tel:050-3101-3495">050-3101-3495</a> </div>
+    </div>
+    <!--right_area-->
+   </header>
+   <div class="language_btn_area cf">
+    <ul class="gNav pc_gNav cf">
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="ja" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn01_on.png" alt="日本語" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn01.png" alt="日本語" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="fy" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn02.png" alt="やさしいにほんご" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn02_on.png" alt="やさしいにほんご" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="en" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn03.png" alt="English" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn03_on.png" alt="English" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="zh-CN" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn04.png" alt="中文" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn04_on.png" alt="中文" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="ko" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn05.png" alt="한국어" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn05_on.png" alt="한국어" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="vi" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn06.png" alt="Tiếng việt nam" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn06_on.png" alt="Tiếng việt nam" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="ne" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn07.png" alt="नेपाली भाषा" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn07_on.png" alt="नेपाली भाषा" class="navOn"></a></li>
+     <li class="gNavBtn"></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="id" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn08.png" alt="Bahasa Indonesia" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn08_on.png" alt="Bahasa Indonesia" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="tl" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn09.png" alt="Tagalog" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn09_on.png" alt="Tagalog" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="th" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn10.png" alt="ภาษาไทย" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn10_on.png" alt="ภาษาไทย" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="pt" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn11.png" alt="Português" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn11_on.png" alt="Português" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="es" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn12.png" alt="Español" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn12_on.png" alt="Español" class="navOn"></a></li>
+     <li class="gNavBtn"><a href="javascript:void(0);" data-stt-changelang="hi" data-stt-ignore><img src="https://www.funabashi-multilingual.info/images/top/lbtn13.png" alt="" class="navOff"><img src="https://www.funabashi-multilingual.info/images/top/lbtn13_on.png" alt="" class="navOn"></a></li>
+    </ul>
+   </div></section><ul class="main_menu"><section class="cf"><li><a data-mh="main_menu" href="https://www.funabashi-multilingual.info/usage/">相談方法</a></li><li><a data-mh="main_menu" href="https://www.funabashi-multilingual.info/guide/">ふなばし生活ガイド</a></li><li><a data-mh="main_menu" href="https://www.funabashi-multilingual.info/beginner/">初めての方へ</a></li><li><a data-mh="main_menu" href="https://www.funabashi-multilingual.info/faq/">よくある質問</a></li></section></ul></div></div>
+
+			
+			
+			
+		</div><!--wrapper-->
+		
+	</div><!--block_wrap block_two-->
+	
+</div><!--wrap-->
+	
+<!--上固定メニュー-->
+<script type="text/javascript">
+ $(function() {
+      var navBox = $("#headbar");
+      navBox.hide();
+      var TargetPos = 200;
+      $(window).scroll( function() {
+         var ScrollPos = $(window).scrollTop();
+         if( ScrollPos > TargetPos ) {
+            navBox.fadeIn();
+         }
+         else {
+            navBox.fadeOut();
+         }
+      });
+   });
+</script>
+<script>
+$(window).load(function(){
+$('#top_fix_menu .language a').on('click', function () {
+    $('#top_fix_menu .pc_gNav').slideToggle('active');
+});
+});
+
+$(window).load(function(){
+$('#fade-in .language a').on('click', function () {
+    $('#fade-in .pc_gNav').slideToggle('active');
+});
+});
+
+$(function(){
+	$('.question').click(function(){
+		$(this).next('.answer_area').slideToggle();
+    	$(this).toggleClass('active');
+	});
+});
+</script>
+
+<!-- チェックボックス必須 -->
+ <script>
+ $(function(){
+  $('.send').click(function(){
+    var check_count = $('.soudan :checked').length;
+    if (check_count == 0 ){
+      alert('相談内容がチェックされていません。')
+      return false;
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(function(){
+　　$('.matchHeight-group1').matchHeight();
+　　$('.matchHeight-group2').matchHeight();
+　　$('.matchHeight-walk').matchHeight();
+　　$('.matchHeight-walk2').matchHeight();
+　　$('.matchHeight-akihaku1').matchHeight();
+　　$('.matchHeight-akihaku2').matchHeight();
+　　$('.matchHeight-column1').matchHeight();
+　　$('.matchHeight-column2').matchHeight();
+　　$('.matchHeight-kanren').matchHeight();
+　　$('.matchHeight-trivia').matchHeight();
+　　$('.matchHeight-columnist1').matchHeight();
+　　$('.matchHeight-columnist2').matchHeight();
+});
+</script>
+
+<script>var scroll = new SmoothScroll('[data-scroll]');</script>
+	
+	
+</body>
+</html>
