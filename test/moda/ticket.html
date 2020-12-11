@@ -4,7 +4,10 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <script>
+      console.log('start')
+      console.log(document.body.textContent.replace(/\s+/g, ' ').length)
+    </script>
     <!-- <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -20,6 +23,7 @@
    
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
+
 	 <script src="https://d.shutto-translation.com/trans.js?id=1403"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -2703,5 +2707,8 @@
     $('.year').text(date.getFullYear());
 
 </script>
-
+    <script>
+      console.log('end')
+      console.log(document.body.textContent.replace(/\s+/g, ' ').length)
+    </script>
 </html>
