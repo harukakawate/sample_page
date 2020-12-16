@@ -53,7 +53,8 @@
     -->
 	    <script>
       console.log('start')
-      console.log(document.body.textContent.replace(/\s+/g, ' ').length)
+      var textMsg = document.getElementById('text-msg');
+console.log(textMsg.textContent.replace(/\s+/g, "").length);
     </script>
 </head>
 
@@ -723,9 +724,9 @@
                         </div> -->
                     </div>
                 </section>
-			    	    <script>
-
-      console.log(document.body.textContent.replace(/\s+/g, ' ').length)
+  <script>
+      var textMsg = document.getElementById('text-msg');
+      console.log(textMsg.textContent.replace(/\s+/g, "").length);
     </script>
                 <!-- お知らせ -->
                 <section id="notice" class="artist_sec">
@@ -2725,6 +2726,7 @@
 <script src="https://shutto-translation-development-kawate.s3.amazonaws.com/trans.js?id=1577"></script>
     <script>
       console.log('end')
-      console.log(document.body.textContent.replace(/\s+/g, ' ').length)
+      var textMsg = document.getElementById('text-msg');
+      console.log(textMsg.textContent.replace(/\s+/g, "").length);
     </script>
 </html>
