@@ -49,12 +49,11 @@
 
 </main>
   <script>
-    var select = document.getElementsByClassName("stt-code");
-    select.textContent.addEventListener('change', function(){
+  __stt.on('selectLang', function(event) {
       __stt.get('lang', function(lang) {
         console.log(lang)
       });
-    });
+  });
 </script>
 </body>
 </html>
