@@ -47,9 +47,12 @@
   <iframe width="800" height="500" src="./iframe.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <br>
   <script>
-  __stt.get('lang', function(lang) {
-    console.log(lang)
-  });
+    var select = document.querySelector("#stt-select");
+    select.addEventListener('change', function(){
+      __stt.get('lang', function(lang) {
+        console.log(lang)
+      });
+    });
 </script>
 </main>
 
