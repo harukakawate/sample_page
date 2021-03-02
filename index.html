@@ -5,14 +5,15 @@
 <title>GitHubサンプルのページ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
 <script src="https://d.shutto-translation.com/trans.js?id=1465"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HXTWFS4R8J"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+__stt.on('setLang', function(event) {
+  gtag('event', 'set_lang', {
+      'send_to': 'G-HXTWFS4R8J',
+      'event_category': 'ShuttoTranslation',
 
-  gtag('config', 'G-HXTWFS4R8J');
+      'non_interaction': true
+  });
+});
 </script>
 </head>
 
