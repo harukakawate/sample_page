@@ -13,7 +13,7 @@
   <h1>GitHub Pages のサンプルです</h1>
   <div class="lang_change_popup" id="lang_change_popup2">
       <div class="lang_change_link">
-        <a href="#" data-stt-changelang="ja" data-stt-ignore>日本語<!----></a>
+        <a href="#" data-stt-changelang="ja" data-stt-ignore hidden>日本語<!----></a>
         <a href="#" data-stt-changelang="zh-CN" data-stt-ignore>中文<!----></a>
       </div>
     </div>
@@ -61,6 +61,14 @@
   __stt.on('selectLang', function(event) {
       __stt.get('lang', function(lang) {
         console.log(lang)
+        if (lang==='en') {
+          var textbox_element = document.getElementById('lang_change_popup2');
+          // 新しいHTML要素を作成
+          var new_element = document.createElement('p');
+          new_element.textContent = '<a href="#" data-stt-changelang="ja" data-stt-ignore hidden>日本語<!----></a>';
+          // 指定した要素の中の末尾に挿入
+          textbox_element.appendChild(new_element);
+        }
       });
   });
   __stt.get('lang', function(lang) {
