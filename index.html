@@ -13,7 +13,7 @@
   <h1>GitHub Pages のサンプルです</h1>
   <div class="lang_change_popup" id="lang_change_popup2">
       <div class="lang_change_link">
-        <a href="#" data-stt-changelang="ja" data-stt-ignore hidden>日本語<!----></a>
+        <a href="#" data-stt-changelang="ja" data-stt-ignore type="hidden">日本語<!----></a>
         <a href="#" data-stt-changelang="zh-CN" data-stt-ignore>中文<!----></a>
       </div>
     </div>
@@ -64,7 +64,7 @@
         if (lang==='en') {
           
           var test = document.getElementById('lang_change_popup2');
-          test.insertAdjacentHTML('beforebegin','<a href="#" data-stt-changelang="ja" data-stt-ignore hidden>日本語<!----></a>');
+          test.insertAdjacentHTML('beforebegin','<a href="#" data-stt-changelang="ja" data-stt-ignore>日本語<!----></a>');
         }
       });
   });
