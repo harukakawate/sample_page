@@ -1,77 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N7VSLCJ');</script>
-<!-- End Google Tag Manager -->
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167763701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-//  gtag('config', 'UA-167763701-1');
-  gtag('config', 'UA-167763701-1', {
- 'linker': {
-  'domains': ['zh-tw-1130.sandbox.apshuttotranslation.net','harukakawate.github.io']
- }
-});
-</script>
-
 <meta charset="UTF-8">
 <title>GitHubサンプルのページ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
 <script src="https://sandbox-d.ea-shutto-translation.net/trans.js?id=1130"></script>
-<script>
-__stt.on('setLang', function(event) {
-  ga('create', 'UA-167763701-1', 'auto', 'stt1130');
-  ga('stt1130.send', 'event', 'ShuttoTranslation', 'SetLang', {
-    dimension1: event.lang,
-    nonInteraction: true
-  });
-});
-</script>
+<!--metaタグのcanonicalが独自ドメインであること-->
+<link rel="canonical" href="https://harukakawate.github.io/sample_page/">
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7VSLCJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <main>
   <h1>GitHub Pages のサンプルです</h1>
   こんにちは。<br>
   サンプルのページです。<br>
+  https://harukakawate.github.io/sample_page/<br>
+  
   <a href="https://www.google.com/?hl=ja"><button>グーグル</button></a>
   <a href="https://harukakawate.github.io/sample_page/222.html"><button>222</button></a>
   <br>
     <img border="0" src="./img/basic1.png" width="128" height="128" alt="イラスト1">
     <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1">
   <br>
-  今日は２０２０年4月14日です。
-  今日は良い天気です。
-  桜が咲いています。
-  暖かいです。
-  
-  <div>こんばんは。</div>
-  <div>2020.1.28　メンテナンス</div>
+  <!--hostingのurl にアクセスすると独自ドメインにリダリレクトされること-->
+  <a href="https://en-1637.sandbox.apshuttotranslation.net/sample_page/222.html">222.html</a>
+  <!--scriptタグのsrcが独自ドメインであること-->
+  <script src="https://harukakawate.github.io/sample_page/script.js"></script>
 
-  <img border="0" src="./img/basic2.png" width="128" height="128" alt="イラスト1"><br>
-  <img border="0" src="./img/basic3.png" width="128" height="128" alt="イラスト1"><br>
-  <img border="0" src="./img/basic4.png" width="128" height="128" alt="イラスト1"><br>
-  <img border="0" src="./img/basic5.png" width="128" height="128" alt="イラスト1"><br>
-  <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1"><br>
-  <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1"><br>
-  <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1"><br>
-  <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1"><br>
-  <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1"><br>
-  <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1"><br>
+  <!--linkタグ(rel属性が import, sidebar, prev, next, first, last)のhrefで登録済みURLが独自ドメインに置換されていること-->
+  <link rel="import" href="前のページのURL">
+  <link rel="sidebar" href="次のページのURL">
+  <link rel="prev" href="次のページのURL">
+  <link rel="next" href="次のページのURL">
+  <link rel="first" href="次のページのURL">
+  <link rel="last" href="次のページのURL">
+  
+  <!--上記以外のlinkタグのhrefは元ページドメインであること（元々、別ドメインのページもそのまま）-->
+  <link rel="alternate" hreflang="外国語ページのURL" />
+  <link rel="dns-prefetch" href="プリフェッチさせたいドメイン名" />
+  
+  <!--aタグのhrefで登録済みURLが独自ドメインに置換されていること-->
+  <a href="https://harukakawate.github.io/sample_page/222.html">222.html</a>
+  
+  <!--ページ内のテキスト&翻訳対象属性に独自ドメインまたはhostingドメインが現れていないこと-->
+  
+  
+  
 </main>
 
 <p>日本国民は、正当に選挙された国会における代表者を通じて行動し、われらとわれらの子孫のために、諸国民との協和による成果と、わが国全土にわたつて自由のもたらす恵沢を確保し、政府の行為によつて再び戦争の惨禍が起ることのないやうにすることを決意し、ここに主権が国民に存することを宣言し、この憲法を確定する。そもそも国政は、国民の厳粛な信託によるものであつて、その権威は国民に由来し、その権力は国民の代表者がこれを行使し、その福利は国民がこれを享受する。これは人類普遍の原理であり、この憲法は、かかる原理に基くものである。われらは、これに反する一切の憲法、法令及び詔勅を排除する。日本国民は、恒久の平和を念願し、人間相互の関係を支配する崇高な理想を深く自覚するのであつて、平和を愛する諸国民の公正と信義に信頼して、われらの安全と生存を保持しようと決意した。われらは、平和を維持し、専制と隷従、圧迫と偏狭を地上か</p>
