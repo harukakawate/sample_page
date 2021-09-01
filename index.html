@@ -2,24 +2,7 @@
 <html>
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167763701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-167763701-1');
-</script>
-<script>
-__stt.on('setLang', function(event) {
-  gtag('event', 'set_lang', {
-      'send_to': 'UA-167763701-1',
-      'event_category': 'ShuttoTranslation',
-      'dimension1': event.lang,
-      'non_interaction': true
-  });
-});
-</script>
   <meta charset="UTF-8">
  
 <title>GitHubサンプルのページ</title>
@@ -31,29 +14,65 @@ __stt.on('setLang', function(event) {
 <body>
 <main>
   <h1>GitHub Pages のサンプルです</h1>
+  <div class="lang_change_popup" id="lang_change_popup2">
+      <div class="lang_change_link">
+        <a href="#" data-stt-changelang="ja" data-stt-ignore id="ja_bar">日本語<!----></a>
+        <a href="#" data-stt-changelang="zh-CN" data-stt-ignore>中文<!----></a>
+      </div>
+    </div>
+<style>.lang_change_popup{display: none;}#lang_change_popup2{display: block!important;}</style>
 
+  
+  <p id="hello">こんにちは。<br>
+  サンプルのページです。<br>
+  </p>
+  <span>ようこそ。</span>
+  <p>https://harukakawate.github.io/sample_page/</p>
+  <a href="https://www.google.com/?hl=ja"><button>グーグル</button></a>
+  <a href="https://harukakawate.github.io/sample_page/222.html"><button>222</button></a>
+  <a href="https://harukakawate.github.io/sample_page/hosting_test.html"><button>hosting_test</button></a>
+  <a href="https://harukakawate.github.io/hosting/"><button>hosting</button></a>
+  <br>
+    <img border="0" src="./img/basic1.png" width="128" height="128" alt="イラスト1">
+    <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1">
+  <br>
+  今日は２０２０年4月14日です。
+  今日は良い天気です。
+  桜が咲いています。
+  暖かいです。
+  <span style="display:block;">サービス内容のお問合せA</span>
+<span style="display:block;">見積り依頼A</span>
+  <span>サービス内容のお問合せB</span>
+<span>見積り依頼B</span>
+  
+  <p>齋藤 健</p>
+  <p>齋藤　健</p>
+  <p>理事長　村田憲一</p>
+  <p>しゃぶしゃぶ・すき焼き・虎河豚料理　的山</p>
+  <p>グラニースミス　アップルパイ＆コーヒー</p>
+  <p></p>
+  <p>ロフテー枕工房 二子玉川クチュリエ店</p>
+  <p>ロフテー枕工房　二子玉川クチュリエ店</p>
+  <p>「お問合せ Q&A」に該当しないご質問、またご不明点ございましたら、下記「粘度計校正用標準液お問合せフォーム」より、お問合せください。</p>
+  <p>「お問合せ　Q&A」に該当しないご質問、またご不明点ございましたら、下記「粘度計校正用標準液お問合せフォーム」より、お問合せください。</p>
+  
+  
+
+  <img border="0" src="./img/カピバラ.png" width="128" height="128" alt="https://harukakawate.github.io/sample_page/"><br>
+  <img border="0" src="./img/テスト.png" width="128" height="128" alt="イラスト1"><br>
+  <img border="0" src="./img/basic5.png" width="128" height="128" alt="イラスト1"><br>
+  <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1"><br>
+  <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1"><br>
+  <p>フォームサンプル<br>
+    <form action="#" method="post">
+      <p>お名前（必須）：<br>
+      <input type="text" name="name"></p>
+      <p>メールアドレス：<br>
+      <input type="text" name="mail"></p>
+    </form>
+  </p>
+    <br><br>
 
 </main>
-  <script>
-    var ja_bar = document.getElementById('ja_bar');
-    console.log(ja_bar)
-    ja_bar.style.visibility ="hidden";
-  __stt.on('selectLang', function(event) {
-      __stt.get('lang', function(lang) {
-        console.log(lang)
-        
-        if (lang==='en') {
-          ja_bar.style.visibility ="visible";
-        } else {
-          ja_bar.style.visibility ="hidden";
-        }
-      });
-  });
-  __stt.get('lang', function(lang) {
-    console.log('open page')
-    console.log(lang)
-  });
-
-</script>
 </body>
 </html>
