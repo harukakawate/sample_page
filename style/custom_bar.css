@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* bigen shutto翻訳 */
+.stt-lang-select {
+    z-index: 99;
+}
+
+div[data-value]:before {
+    content: '';
+    display: inline-block;
+    vertical-align: text-bottom;
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+}
+/* 国旗アイコン */
+/*
+div[data-value="ja"]:before {
+	background-image: url(../img/00121-2.png);
+	background-size: contain;
+}
+div[data-value="en"]:before {
+	background-image: url(../img/United-States-2.png);
+	background-size: contain;
+	margin-right: 2px;
+}
+div[data-value="zh-CN"]:before {
+	background-image: url(../img/China-2.png);
+	background-size: contain;
+}
+*/
+
+/* 閉じたとき */
+.stt-text:before {
+	content: '';
+	background-image: url(../img/00121.png); /* https://owl-stock.work/icon-mono-00121/ */
+	background-size: contain;
+	display: inline-block;
+	vertical-align: text-bottom;
+	width: 13px;
+	height: 13px;
+	margin-right: 4px;
+	background-repeat: no-repeat;
+}
+.stt-text#text {
+	padding-bottom: 20px;
+}
+/* グローバルアイコン */
+div[data-value="ja"]:before {
+	background-image: url(../img/00121.png);
+	width: 13px;
+	height: 13px;
+	margin-right: 4px;
+	background-size: contain;
+}
+/* 背景色 */
+.stt-lang-select .text,
+.stt-lang-select .stt-text,.stt-select{
+  color: #000 !important;
+  background-color: #fff !important;
+}
+/* 開いた時の文字色 */
+.stt-lang-select .text:after,
+.stt-lang-select .stt-text:after,.stt-item{
+  color: #000 !important;
+}
+*/
+/*
+#lang_en:before {
+	content: '';
+	background-image: url(../img/United-States-2.png);
+	background-size: contain;
+	display: inline-block;
+	vertical-align: text-bottom;
+	width: 18px;
+	height: 18px;
+	margin-right: 2px;
+}
+*/
+
+/* 
+#lang_zh-CN:before {
+	content: '';
+	background-image: url(../img/China-2.png);
+	background-size: contain;
+	display: inline-block;
+	vertical-align: text-bottom;
+	width: 18px;
+	height: 18px;
+	margin-right: 2px;
+}
+*/
+/* 中国（繁体） */
+div[data-value="zh-TW"]:before {
+	background-image: url(../image/icon_lang/tw.png);
+	background-size: contain;
+}
+#lang_zh-TW:before {
+	content: '';
+	background-image: url(../image/icon_lang/tw.png);
+	background-size: contain;
+	display: inline-block;
+	vertical-align: text-bottom;
+	width: 18px;
+	height: 18px;
+	margin-right: 2px;
+}
+/* 韓国語 */
+div[data-value="ko"]:before {
+	background-image: url(../image/icon_lang/ko.png);
+	background-size: contain;
+}
+#lang_ko:before {
+	content: '';
+	background-image: url(../image/icon_lang/ko.png);
+	background-size: contain;
+	display: inline-block;
+	vertical-align: text-bottom;
+	width: 18px;
+	height: 18px;
+	margin-right: 2px;
+}
+
+.stt-lang-select .text:after {
+	top: 11px !important;
+}
+
+/*
+div[class="active"][data-stt-active][data-value="ja"] {
+  color: green;
+  font-weight: bold;
+}
+*/
+/* end shutto翻訳 */
