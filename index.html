@@ -33,6 +33,7 @@ __stt.on('setLang', function(event) {
   <div class="lang_change_popup" id="lang_change_popup2">
       <div class="lang_change_link">
         <a href="#" data-stt-changelang="ja" data-stt-ignore id="ja_bar">日本語<!----></a>
+	<a href="#" data-stt-changelang="en" data-stt-ignore>English<!----></a>
         <a href="#" data-stt-changelang="zh-CN" data-stt-ignore>中文<!----></a>
       </div>
     </div>
@@ -105,7 +106,7 @@ __stt.on('setLang', function(event) {
       __stt.get('lang', function(lang) {
         console.log(lang)
         
-        if (lang==='en') {
+        if (lang!=='ja') {
           ja_bar.style.visibility ="visible";
         } else {
           ja_bar.style.visibility ="hidden";
