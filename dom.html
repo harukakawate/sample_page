@@ -40,7 +40,7 @@
 <main>
   <br>
   <p id="mod">最初からあるテキスト</p>
-  <img src="../img/before.png" width="128" height="128" alt="イラスト1">
+  <img src="./img/before.png" width="128" height="128" alt="イラスト1">
   <br>
   <p id="loading"></p>
   <p id="interactive"></p>
@@ -56,7 +56,7 @@
 </main>
 <script>
   function generateText() {
-    const text = "後から追加された<br><img src=\"../img/before.png\" width=\"128\" height=\"128\" alt=\"イラスト1\"><img src=\"http://a.test/img/before.png\" width=\"128\" height=\"128\" alt=\"イラスト1\">"
+    const text = "後から追加された<br><img src=\"./img/before.png\" width=\"128\" height=\"128\" alt=\"イラスト1\"><img src=\"https://harukakawate.github.io/sample_page/img/before.png\" width=\"128\" height=\"128\" alt=\"イラスト1\">"
     return new Promise((resolve) => {
         setTimeout(() => resolve(text), 3000)
     })
