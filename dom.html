@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    //console.log(document.readyState) //loading
+    document.write('ローディング')
+
+    document.addEventListener('readystatechange', (event) => {
+      if (event.target.readyState === 'interactive') {
+        //document.getElementById("interactive").innerHTML = 'サブリソース読み込み中'
+
+      }
+      else if (event.target.readyState === 'complete') {
+        //document.getElementById("complete").innerHTML = 'コンプリート'
+        //document.write(document.getElementsByTagName('html')[0].innerHTML)
+      }
+    });
+
+    //document.addEventListener("DOMContentLoaded", console.log('addEventListener DOMContentLoaded')); //dom読み込み後
+    window.addEventListener('load', (event) => {
+      // complete後
+    });
+
+  </script>
+
+<meta charset="UTF-8">
+<title>DOMテスト
+</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://staging-d.ea-shutto-translation.net/trans.js?id=613"></script>
+
+</head>
+<script>
+  $( document ).ready(function() {
+    //console.log( "Document Ready Test !" );
+  });
+</script>
+<body>
+<main>
+  <br>
+  <p id="mod">最初からあるテキスト</p>
+  <img src="../img/before.png" width="128" height="128" alt="イラスト1">
+  <br>
+  <p id="loading"></p>
+  <p id="interactive"></p>
+  <p id="complete"></p>
+  <br>
+  <p id="sample"></p>
+  <p id="text"></p>
+  <span id="reverse1">場所入れ替え1</span>
+  <span id="reverse2">場所入れ替え2</span>
+  <br>
+  <p id="test"><a>text1</a> text2</p>
+  
+</main>
+<script>
+  function generateText() {
+    const text = "後から追加された<br><img src=\"../img/before.png\" width=\"128\" height=\"128\" alt=\"イラスト1\"><img src=\"http://a.test/img/before.png\" width=\"128\" height=\"128\" alt=\"イラスト1\">"
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(text), 3000)
+    })
+  }
+  function reverse() {
+    const text = document.getElementById("reverse1").innerHTML
+    document.getElementById("reverse1").innerHTML = document.getElementById("reverse2").innerHTML
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(text), 3000)
+    })
+  }
+  function updateTextContent() {
+    const text = "textContentの書き換え"
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(text), 3000)
+    })
+  }
+  async function addContent() {
+    let t = document.body.childNodes[0].data
+    //document.body.childNodes[0].nodeValue = await updateTextContent()
+    document.getElementById("sample").innerHTML = await generateText()
+    //document.getElementById("reverse2").innerHTML = await reverse()
+
+  }
+
+  addContent()
+
+</script>
+
+
+</body>
+
+</html>
