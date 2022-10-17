@@ -48,7 +48,7 @@
   <p id="complete"></p>
   <br>
   <p id="sample"></p>
-  <p id="text"></p>
+  <p id="sample2"></p>
   <span id="reverse1">場所入れ替え1</span>
   <span id="reverse2">場所入れ替え2</span>
   <br>
@@ -58,6 +58,14 @@
 <script>
   function generateText() {
     const text = "後から追加されたテキスト<br><img src=\"./img/before.png\" width=\"128\" height=\"128\" alt=\"イラスト2\"><img src=\"https://harukakawate.github.io/sample_page/img/before.png\" width=\"128\" height=\"128\" alt=\"イラスト3\">"
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(text), 3000)
+    })
+  }
+  function addLongText() {
+    const text = "<p>@media私はほかけっして大した詐欺料においてのの後にしたた。できるだけ今に反対順もどうしてもこの誘惑なでまででもつから行くないにも話入っるたて、元々にはしたたたます。他人を出たのは実に生涯を同時になけれなです。ことに槙君から周旋兄必ず相違をやっだ自分そのつまり私か批評のという小お話しでですですまいて、どんな今は私か本当学校にありと、大森さんののが地位の私へなお実意味と出ので私家にご発展で思わように毫もご融通から知れましたて、単にまして説明がしましていですものが済ましでた。
+    もっともただご教師がしものはさっそく大変と見るうから、そんな鈍痛にも出かけなかっがといった頭をなりてしまえたない。こういう時兄のうちその事は私上でもっだかと張さんにきまったない、国家の同年でについて不所有ないずないし、国柄のためを口調を当時だけの他が偶然していので、どうの事実へしばその中が何だかなりあるないと持っです気うから、ほどよくましたてもう少し小欄保つたものだろました。例えば素因か非常か安心を及ぼすうて、元来中道に構うてみるませ中をお学習の前が及ぼすたらでしょ。
+    場合にもけっしてなりが聴いたですですあるて、できるだけ必ずしも聴いが矛盾もどうないでのです。またご始末になってはしまいな方たながら、</p>"
     return new Promise((resolve) => {
         setTimeout(() => resolve(text), 3000)
     })
@@ -79,6 +87,7 @@
     let t = document.body.childNodes[0].data
     //document.body.childNodes[0].nodeValue = await updateTextContent()
     document.getElementById("sample").innerHTML = await generateText()
+    document.getElementById("sample2").innerHTML = await addLongText()
     //document.getElementById("reverse2").innerHTML = await reverse()
 
   }
