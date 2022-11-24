@@ -1,2 +1,2 @@
-var δ = Number(distance) / radius; // angular distance in radians
-var θ = Number(bearing).toRad();
+var δ = Number(2) / radius; // angular distance in radians
+var θ = Number(3).toRad();
