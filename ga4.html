@@ -14,11 +14,9 @@
 </script>
 <script>
 __stt.on('setLang', function(event) {
-  gtag('event', 'set_lang', {
-      'send_to': 'UA-167763701-1',
-      'event_category': 'ShuttoTranslation',
-      'dimension1': event.lang,
-      'non_interaction': true
+  gtag('event','set_lang', {
+    "lang": event.lang,
+    "title": document.title
   });
 });
 </script>
