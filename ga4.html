@@ -20,6 +20,14 @@ __stt.on('setLang', function(event) {
     "title": document.title
   });
 });
+gtag('event','session_start', {
+    'event_category': 'ShuttoTranslation',
+    "lang": document.cookie.split('; ').find((row) => row.startsWith('stt_lang='))?.split('=')[1]
+  });
+  gtag('event','page_view', {
+    'event_category': 'ShuttoTranslation',
+    "lang": document.cookie.split('; ').find((row) => row.startsWith('stt_lang='))?.split('=')[1]
+  });
 </script>
 <!-- Google tag (gtag.js) -->
   <meta charset="UTF-8">
