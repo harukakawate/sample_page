@@ -21,6 +21,16 @@ __stt.on('setLang', function(event) {
   });
 });
 </script>
+<script>
+__stt.on('setLangHit', function(event) {
+  gtag('event', 'set_lang', {
+      'send_to': 'UA-167763701-1',
+      'event_category': 'ShuttoTranslation',
+      'dimension3': event.lang,
+      'non_interaction': true
+  });
+});
+</script>
   <meta charset="UTF-8">
  
 <title>GitHubサンプルのページ</title>
