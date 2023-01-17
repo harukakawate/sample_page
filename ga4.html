@@ -16,18 +16,9 @@
 __stt.on('setLang', function(event) {
   gtag('event','shutto_translation_lang', {
     'event_category': 'ShuttoTranslation',
-    "stt_lang": event.lang,
-    'send_to': 'G-HXTWFS4R8J'
+    "stt_lang": event.lang
   });
 });
-gtag('event','session_start', {
-    'event_category': 'ShuttoTranslation',
-    "stt_lang": document.cookie.split('; ').find((row) => row.startsWith('stt_lang='))?.split('=')[1]
-  });
-  gtag('event','page_view', {
-    'event_category': 'ShuttoTranslation',
-    "stt_lang": document.cookie.split('; ').find((row) => row.startsWith('stt_lang='))?.split('=')[1]
-  });
 </script>
 <!-- Google tag (gtag.js) -->
   <meta charset="UTF-8">
