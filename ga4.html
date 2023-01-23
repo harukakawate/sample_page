@@ -24,9 +24,9 @@
 	<script>
 	// GA4 event
 	__stt.on('setLangHit', function(event) {
-		gtag('event','shutto_translation_lang', {
-			'event_category': 'ShuttoTranslation',
-			"stt_lang": event.lang
+		gtag('event','shutto_trans_set_lang', {
+			'send_to': 'G-HXTWFS4R8J',
+			"lang": event.lang
 		});
 		gtag('event', 'set_lang', {
 		      'send_to': 'UA-167763701-1',
