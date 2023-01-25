@@ -24,6 +24,7 @@
 	<script>
 	// GA4 event
 	__stt.on('setLangHit', function(event) {
+		console.log("setLangHit, lang:${event.lang}")
 		gtag('event','shutto_trans_set_lang', {
 			'send_to': 'G-HXTWFS4R8J',
 			"lang": event.lang
