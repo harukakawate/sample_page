@@ -3,3 +3,9 @@
   width: 200px;
   font-color: red;
 }
+
+@media screen  and (max-width: 740px) {
+    .k1_order{
+        order: 2;
+    }
+}
