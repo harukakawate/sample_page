@@ -5,7 +5,7 @@
   <title>GitHubサンプルのページ</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167763701-1"></script>
-  <script src="https://d.shutto-translation.com/trans.js?id=1514"></script>
+  <script src="https://shutto-translation-development3.s3.amazonaws.com/trans.js?id=925"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -15,6 +15,7 @@
   </script>
   <script>
   __stt.on('setLang', function(event) {
+    console.log('setLang')
     gtag('event', 'set_lang', {
         'send_to': 'UA-167763701-1',
         'event_category': 'ShuttoTranslation',
@@ -25,6 +26,7 @@
   </script>
   <script>
   __stt.on('setLangHit', function(event) {
+    console.log('setLangHit')
     gtag('event', 'set_lang', {
         'send_to': 'UA-167763701-1',
         'event_category': 'ShuttoTranslation',
