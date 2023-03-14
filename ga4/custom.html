@@ -34,11 +34,8 @@
   <a href="5.html"><button>5</button></a>
 </main>
   <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      const lang = document.querySelector('[data-stt-active]').dataset.sttChangelang
-      console.log(lang)
-      dataLayer.push({'event': 'shutto_trans_set_lang', 'lang': lang});
-    });
+    const lang = document.cookie.match(/stt_lang=[^;]+/).at(0).split('=').at(-1)
+    dataLayer.push({'event': 'shutto_trans_set_lang', 'lang': lang});
   </script>
 </body>
 </html>
