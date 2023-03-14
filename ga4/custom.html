@@ -11,13 +11,6 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-N7VSLCJ');</script>
   <!-- End Google Tag Manager -->
-  <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      const lang = document.querySelector('[data-stt-active]').dataset.sttChangelang
-      console.log(lang)
-      dataLayer.push({'event': 'shutto_trans_set_lang', 'lang': lang});
-    });
-  </script>
   <meta charset="UTF-8">
   <title>GA4サンプル(カスタムイベント)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
@@ -40,6 +33,12 @@
   <a href="4.html"><button>4</button></a>
   <a href="5.html"><button>5</button></a>
 </main>
-
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const lang = document.querySelector('[data-stt-active]').dataset.sttChangelang
+      console.log(lang)
+      dataLayer.push({'event': 'shutto_trans_set_lang', 'lang': lang});
+    });
+  </script>
 </body>
 </html>
