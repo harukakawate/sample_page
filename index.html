@@ -3,39 +3,23 @@
 <head>
   <meta charset="utf-8">
   <title>GitHubサンプルのページ</title>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167763701-1"></script>
-  <script src="https://staging-d.ea-shutto-translation.net/trans.js?id=631"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXTWFS4R8J"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-167763701-1');
+    gtag('config', 'G-HXTWFS4R8J');
   </script>
+  <script src="https://d.shutto-translation.com/trans.js?id=1514"></script>
   <script>
-  __stt.on('setLang', function(event) {
-    console.log('setLang')
-    gtag('event', 'set_lang', {
-        'send_to': 'UA-167763701-1',
-        'event_category': 'ShuttoTranslation',
-        'dimension1': event.lang,
-        'non_interaction': true
+    __stt.on('setLangHit', function(event) {
+      gtag('event','shutto_trans_set_lang', {
+        'lang': event.lang
+      });
     });
-  });
   </script>
-  <script>
-  __stt.on('setLangHit', function(event) {
-    console.log('setLangHit')
-    gtag('event', 'set_lang', {
-        'send_to': 'UA-167763701-1',
-        'event_category': 'ShuttoTranslation',
-        'dimension3': event.lang,
-        'non_interaction': true
-    });
-  });
-  </script>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
 </head>
 
