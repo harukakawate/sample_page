@@ -15,7 +15,8 @@
   <script>
     __stt.on('setLangHit', function(event) {
       console.log(event.lang)
-      dataLayer.push({'event': 'shutto_trans_set_lang', 'lang': event.lang});
+      //dataLayer.push({'event': 'shutto_trans_set_lang', 'lang': event.lang});
+      dataLayer.push(['event','shutto_trans_set_lang', { 'lang': event.lang }]);
     });
   </script>
     <meta charset="UTF-8">
