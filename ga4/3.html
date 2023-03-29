@@ -13,11 +13,9 @@
   </script>
   <script src="https://staging-d.ea-shutto-translation.net/trans.js?id=614"></script>
   <script>
-    function pushEvent(){dataLayer.push(arguments);};
     __stt.on('setLangHit', function(event) {
       console.log(event.lang)
-      //dataLayer.push({'event': 'shutto_trans_set_lang', 'lang': event.lang});
-      pushEvent('event','shutto_trans_set_lang', { 'lang': event.lang } );
+      dataLayer.push({'event': 'shutto_trans_set_lang', 'lang': event.lang});
     });
   </script>
     <meta charset="UTF-8">
