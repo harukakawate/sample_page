@@ -9,26 +9,16 @@
   <script src="https://staging-d.ea-shutto-translation.net/trans.js?id=680"></script>
 
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
+const aFunc = async function( ){
+    await sleep( 2000 );
+}
+aFunc();
+</script>
 
-  gtag('config', 'UA-167763701-1');
-</script>
-<script>
-__stt.on('setLangHit', function(event) {
-  gtag('event', 'set_lang', {
-      'send_to': 'UA-167763701-1',
-      'event_category': 'ShuttoTranslation',
-      'dimension3': event.lang,
-      'non_interaction': true
-  });
-});
-</script>
   <link rel="stylesheet" href="./style/custom_bar.css">
   <link rel="stylesheet" href="./style/ascii.css">
 </head>
-
 <body>
 <main>
   <h1>GitHub Pages のサンプルです</h1>
