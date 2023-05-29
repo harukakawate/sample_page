@@ -12,6 +12,7 @@
 const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
 const aFunc = async function( ){
     await sleep( 2000 );
+    document.querySelector('p').innerHTML='20秒待つテスト'
 }
 aFunc();
 </script>
