@@ -12,8 +12,8 @@
           return;
       
         if (event.data.type && (event.data.type == "FROM_PAGE_TO_CONTENT_SCRIPT")) {    
-          console.log(event.data.text)
-          window.__stt.set("lang","en")
+          console.log(event.data.lang)
+          window.__stt.set("lang", lang)
         } // else ignore messages seemingly not sent to yourself
       }, false);
     </script>
