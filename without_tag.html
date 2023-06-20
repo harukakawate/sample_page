@@ -5,6 +5,17 @@
     <title>タグなしページ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
     <style>body {background-color: #b0e0e6;}</style>
+    <script>
+        window.addEventListener("message", function(event) {
+        // We only accept messages from this window to itself [i.e. not from any iframes]
+        if (event.source != window)
+          return;
+      
+        if (event.data.type && (event.data.type == "FROM_PAGE_TO_CONTENT_SCRIPT")) {    
+          console.log("get message")    
+        } // else ignore messages seemingly not sent to yourself
+      }, false);
+    </script>
   </head>
 
   <body>
