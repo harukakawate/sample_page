@@ -24,7 +24,19 @@
     __stt.on('load', function() {
   　　　　  console.log('翻訳完了')
     });
-</script>
+  </script>
+  <!-- PRJ773-2674 【171・山櫻】shutto翻訳導入ページをframeで別サイトに表示している環境で、言語を切り替えてframe内画面遷移をすると、毎回言語が初期化されてしまう。 -->
+  <script>
+    // getする
+    __stt.get('lang', function(lang) {
+      // ...
+    });
+  </script>
+  <script>
+    // setする
+  __stt.set('lang', 'en');
+  </script>
+  <!-- -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
 </head>
 
