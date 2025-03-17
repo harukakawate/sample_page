@@ -4,7 +4,14 @@
   <meta charset="utf-8">
   <title>GitHubサンプルのページ</title>
   <!-- Google tag (gtag.js) -->
-  <script src="https://staging-d.ea-shutto-translation.net/trans.js?id=1143"></script>
+  <script src="https://staging-d.ea-shutto-translation.net/trans.js?id=1146"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('img').forEach(function(img) {
+      img.setAttribute('data-stt-ignore', '');
+    });
+  });
+</script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -13,7 +20,6 @@
     gtag('config', 'G-HXTWFS4R8J');
   </script>
   <!-- shutto翻訳 -->
-<script src="https://staging-d.ea-shutto-translation.net/trans.js?id=1144"></script>
   <script>
     __stt.on('setLangHit', function(event) {
       console.log(`stt.on ${event.lang}`)
@@ -106,7 +112,7 @@
   <div>
     <h4>画像リンク</h4>
     <a href="https://www.google.com/"><img border="0" src="./img/basic1.png" width="128" height="128" alt="イラスト1"></a>
-    <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト1">
+    <img border="0" src="./img/piyoking.png" width="128" height="128" alt="イラスト2">
   </div>
   <div>
     <h4>絶対パス</h4>
