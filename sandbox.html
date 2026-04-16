@@ -4,7 +4,37 @@
 <meta charset="UTF-8">
 <title>GitHubサンプルのページ sand</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/2.0.4/marx.css">
-<script src="https://sandbox-d.ea-shutto-translation.net/trans.js?id=81007"></script>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KVHEN718KV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-KVHEN718KV');
+  </script>
+  <script>
+    (function() {
+      var handler = function(event) {
+        console.log('function発火')
+        gtag('event','shuttotrans_set_lang', {
+          'shuttotrans_lang': event.lang
+        });
+      };
+      if (window.__stt && window.__stt.on) {
+        window.__stt.on('setLangHit', handler);
+        console.log('sttなし')
+      } else {
+        window.__sttQ = window.__sttQ || [];
+        window.__sttQ.push(['setLangHit', handler]);
+        console.log('sttあり')
+      }
+    })();
+  </script>
+
+  <script src="https://sandbox-d.ea-shutto-translation.net/trans.js?id=81007"></script>
+  
 </head>
 
   <body>
